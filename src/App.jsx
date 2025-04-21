@@ -7,8 +7,6 @@ import AboutUs from './components/AboutUs/AboutUs.jsx'
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
-  
-
   return (
     <React.Fragment>
        <Navbar />
