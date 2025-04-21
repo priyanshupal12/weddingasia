@@ -10,7 +10,7 @@ import eventThree from "../../assets/event-three.jpg";
 import eventFive from "../../assets/event-five.jpg";
 import eventSix from "../../assets/event-six.jpg";
 import { motion } from "framer-motion";
-// import { MdLocationOn, MdDateRange, MdPhone } from "react-icons/md";
+import { MdLocationOn, MdDateRange, MdPhone } from "react-icons/md";
 
 const placeData = [
   {
@@ -95,15 +95,15 @@ const PlaceItem = ({ data }) => {
 
           <ul className="text-left w-full space-y-3">
             <li className="flex items-center text-[#3D0301]">
-              {/* <MdLocationOn className="mr-3 text-[#D4AF37]" /> */}
+              <MdLocationOn className="mr-3 text-[#D4AF37]" />
               <span className="font-medium">{data.location}</span>
             </li>
             <li className="flex items-center text-[#3D0301]">
-              {/* <MdDateRange className="mr-3 text-[#D4AF37]" /> */}
+              <MdDateRange className="mr-3 text-[#D4AF37]" />
               <span className="font-medium">{data.date}</span>
             </li>
             <li className="flex items-center text-[#3D0301]">
-              {/* <MdPhone className="mr-3 text-[#D4AF37]" /> */}
+              <MdPhone className="mr-3 text-[#D4AF37]" />
               <span className="font-medium">{data.call}</span>
             </li>
           </ul>
