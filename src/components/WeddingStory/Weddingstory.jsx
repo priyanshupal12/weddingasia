@@ -115,7 +115,7 @@ const WeddingStory = () => {
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-12"
               }`}
-              style={{ transitionDelay: `${i * 200}ms` }}
+              style={{ transitionDelay: `${i * 1000}ms` }}
               key={i}
             >
               <ProductItem product={product} />
