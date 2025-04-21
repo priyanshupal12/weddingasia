@@ -10,8 +10,7 @@ export default defineConfig({
     theme: {
       extend: {
         fontFamily: {
-          heading: ['"Playfair Display"', 'serif'],
-          description: ['"Open Sans"', 'sans-serif'],
+          baskervville: ['Baskervville', 'serif'],
         },
       },
     },
