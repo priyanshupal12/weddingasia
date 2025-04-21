@@ -7,4 +7,11 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     react()],
+    theme: {
+      extend: {
+        fontFamily: {
+          baskervville: ['Baskervville', 'serif'],
+        },
+      },
+    },
 })
