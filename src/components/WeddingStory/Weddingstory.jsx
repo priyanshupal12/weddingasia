@@ -2,19 +2,19 @@ import React, { useState, useEffect } from "react";
 
 const products = [
   {
-    img: "https://weddingasiaofficial.com/wp-content/uploads/2024/02/xdesktop-view-image-2-min-150x150.jpg.pagespeed.ic.sbeBGN-DqD.webp",
+    img: "https://images.pexels.com/photos/17261593/pexels-photo-17261593/free-photo-of-portrait-of-smiling-indian-couple-in-traditional-costumes.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     title: "Sethu and Vishnu",
     date: "March 15, 2025",
     brief: "A beachside ceremony filled with joy and laughter",
   },
   {
-    img: "https://weddingasiaofficial.com/wp-content/uploads/2024/02/xdesktop-view-image-1-min-150x150.jpg.pagespeed.ic.DbRh99t5y0.webp",
+    img: "https://images.pexels.com/photos/25158843/pexels-photo-25158843/free-photo-of-traditional-indian-wedding-couple.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     title: "Aditi and Saurabh",
     date: "January 22, 2025",
     brief: "An elegant palace wedding with traditional touches",
   },
   {
-    img: "https://weddingasiaofficial.com/wp-content/uploads/2024/02/xdesktop-view-image-min-150x150.jpg.pagespeed.ic.JZbP6Jfb41.webp",
+    img: "https://images.pexels.com/photos/16987433/pexels-photo-16987433/free-photo-of-portrait-of-a-traditional-couple-kissing.jpeg?auto=compress&cs=tinysrgb&w=600",
     title: "Hanna and Shahrukh",
     date: "February 8, 2025",
     brief: "A magical winter celebration under the stars",
@@ -26,7 +26,7 @@ const ProductItem = ({ product }) => {
 
   return (
     <div
-      className="group h-96 relative rounded-lg shadow-lg overflow-hidden"
+      className="group h-96 relative shadow-lg overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -57,7 +57,7 @@ const ProductItem = ({ product }) => {
 
       {/* Back side content */}
       <div
-        className={`absolute inset-0 bg-gradient-to-br from-red-900 to-red-950 rounded-lg overflow-hidden text-white transition-all duration-500 ${
+        className={`absolute inset-0 bg-gradient-to-br from-red-900 to-red-950 overflow-hidden text-white transition-all duration-500 ${
           isHovered ? "scale-100" : "scale-0"
         }`}
       >
@@ -88,21 +88,17 @@ const WeddingStory = () => {
       <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-red-100 -translate-x-1/2 -translate-y-1/2 opacity-30"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-red-100 translate-x-1/3 translate-y-1/3 opacity-30"></div>
 
-      <div className="max-w-6xl px-4 mx-auto relative z-10">
-        <div
-          className={`transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <div className="text-center mb-16">
-            <h2 className="font-serif font-bold text-red-900 leading-tight text-4xl md:text-5xl lg:text-6xl mb-6 relative inline-block">
-              <span className="border-b-4 border-yellow-600 pb-2">Wedding</span>{" "}
+      <div className="max-w-7xl px-4 mx-auto relative z-10">
+        <div className="grid grid-cols-12 justify-start mb-12">
+          <div className="col-span-12 lg:col-span-8 text-left">
+            <h2 className="font-medium text-black font-heading leading-none text-3xl md:text-[55px] mb-2 relative inline-block pb-2">
+              <span className="border-b-4 border-[#D4AF37] pb-2">Wedding </span>{" "}
               Stories
             </h2>
-            <p className="max-w-2xl mx-auto text-gray-600 mt-6">
-              Discover the beautiful journeys of couples who celebrated their
-              special day with us. Each story captures the essence of love,
-              tradition and celebration.
+
+            <p className="text-gray-600 mt-6 max-w-7xl text-lg">
+              Discover our curated selection of prestigious events showcasing
+              the finest in luxury goods and services.
             </p>
           </div>
         </div>
@@ -110,12 +106,12 @@ const WeddingStory = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, i) => (
             <div
-              className={`transition-all duration-1000 ${
+              className={`transition-all duration-1000  mt-8 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-12"
               }`}
-              style={{ transitionDelay: `${i * 1000}ms` }}
+              style={{ transitionDelay: `${i * 2000}ms` }}
               key={i}
             >
               <ProductItem product={product} />

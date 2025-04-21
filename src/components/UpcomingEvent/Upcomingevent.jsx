@@ -10,8 +10,7 @@ import eventThree from "../../assets/event-three.jpg";
 import eventFive from "../../assets/event-five.jpg";
 import eventSix from "../../assets/event-six.jpg";
 import { motion } from "framer-motion";
-import { FaMapMarkerAlt, FaCalendarAlt, FaPhoneAlt } from "react-icons/fa";
-
+// import { MdLocationOn, MdDateRange, MdPhone } from "react-icons/md";
 
 const placeData = [
   {
@@ -96,15 +95,15 @@ const PlaceItem = ({ data }) => {
 
           <ul className="text-left w-full space-y-3">
             <li className="flex items-center text-[#3D0301]">
-              <FaMapMarkerAlt className="mr-3 text-[#D4AF37]" />
+              {/* <MdLocationOn className="mr-3 text-[#D4AF37]" /> */}
               <span className="font-medium">{data.location}</span>
             </li>
             <li className="flex items-center text-[#3D0301]">
-              <FaCalendarAlt className="mr-3 text-[#D4AF37]" />
+              {/* <MdDateRange className="mr-3 text-[#D4AF37]" /> */}
               <span className="font-medium">{data.date}</span>
             </li>
             <li className="flex items-center text-[#3D0301]">
-              <FaPhoneAlt className="mr-3 text-[#D4AF37]" />
+              {/* <MdPhone className="mr-3 text-[#D4AF37]" /> */}
               <span className="font-medium">{data.call}</span>
             </li>
           </ul>
@@ -136,12 +135,12 @@ const Upcomingevent = () => {
             <p className="text-[#D4AF37] font-medium uppercase tracking-widest mb-2">
               Don't Miss Out
             </p>
-            <h2 className="font-bold text-red-900 font-heading leading-none text-3xl md:text-[55px] mb-2 relative inline-block pb-2">
+            <h2 className="font-medium text-black font-heading leading-none text-3xl md:text-[55px] mb-2 relative inline-block pb-2">
               <span className="border-b-4 border-[#D4AF37] pb-2">Upcoming</span>{" "}
               Events
             </h2>
 
-            <p className="text-gray-600 mt-6 max-w-7xl">
+            <p className="text-gray-600 mt-6 max-w-7xl text-lg">
               Discover our curated selection of prestigious events showcasing
               the finest in luxury goods and services.
             </p>
