@@ -2,6 +2,8 @@ import React from 'react'
 import './App.css'
 import Hero from './components/Hero/Hero.jsx'
 import Navbar from './components/Navbar/Navbar.jsx'
+import AboutUs from './components/AboutUs/AboutUs.jsx'
+
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -13,7 +15,7 @@ function App() {
      <Routes>
    
     <Route path="/" element={<Hero />} />
-    <Route path="/about" element={<About />} />
+    <Route path="/aboutus" element={<AboutUs/>} />
     </Routes>
     </React.Fragment>
   )
