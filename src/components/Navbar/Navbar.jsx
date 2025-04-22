@@ -19,7 +19,7 @@ const Navbar = () => {
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gradient-to-b from-stone-900 to-stone-800 shadow-md' : 'bg-transparent'}`}>
       <nav className="  px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* Left - Logo */}
-        <div className="text-2xl font-bold tracking-wide font-serif text-white">WEDDING ASIA</div>
+        <div className="text-2xl font-bold tracking-wide font-serif text-white">JEWELLERY WORLD</div>
 
         {/* Right - Desktop Menu */}
         <ul className="hidden md:flex space-x-14 text-gray-800 font-medium font-serif text-white">
