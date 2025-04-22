@@ -5,31 +5,31 @@ import { Pagination, Autoplay, A11y, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-import eventOne from "../../assets/event-one.jpg";
-import eventTwo from "../../assets/event-two.jpg";
-import eventThree from "../../assets/event-three.jpg";
+import redChick from "../../assets/red-chick.jpg";
+import show4 from "../../assets/show4.jpg";
+import hero1 from "../../assets/hero1.jpg";
 import eventFive from "../../assets/event-five.jpg";
-import eventSix from "../../assets/event-six.jpg";
+import green_jewellary from "../../assets/green_jewellary.jpg";
 import { motion } from "framer-motion";
 import { MdLocationOn, MdDateRange, MdPhone } from "react-icons/md";
 
 const placeData = [
   {
-    img: eventOne,
+    img: redChick,
     title: "Wedding Asia",
     date: "3 & 4 May",
     location: "Mumbai",
     call: "+91-9216322509",
   },
   {
-    img: eventTwo,
+    img: show4,
     title: "Luxury Expo",
     date: "10 & 11 May",
     location: "Delhi",
     call: "+91-9876543210",
   },
   {
-    img: eventThree,
+    img: hero1,
     title: "Fashion Fiesta",
     date: "17 & 18 May",
     location: "Bangalore",
@@ -43,7 +43,7 @@ const placeData = [
     call: "+91-9090909090",
   },
   {
-    img: eventSix,
+    img: green_jewellary,
     title: "Royal Vogue",
     date: "7 & 8 June",
     location: "Jaipur",
