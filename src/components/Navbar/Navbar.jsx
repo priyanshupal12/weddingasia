@@ -19,15 +19,16 @@ const Navbar = () => {
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gradient-to-b from-stone-900 to-stone-800 shadow-md' : 'bg-transparent'}`}>
       <nav className="  px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* Left - Logo */}
-        <div className="text-2xl font-bold tracking-wide font-serif text-white">WEDDING ASIA</div>
+        <div className="text-2xl font-bold tracking-wide font-serif text-white">JEWELLERY WORLD</div>
 
         {/* Right - Desktop Menu */}
         <ul className="hidden md:flex space-x-14 text-gray-800 font-medium font-serif text-white">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/aboutus">AboutUs</Link></li>
+          <li><Link to="/aboutus">About Us</Link></li>
           <li><Link to="/gallery">Gallery</Link></li>
-          <li><Link to="/contact">Online Store</Link></li>
-          <li><Link to="/contact">Journal</Link></li>
+          <li><Link to="/onlinestore">Online Store</Link></li>
+          <li><Link to="/journal">Journal</Link></li>
+          <li><Link to="/register">Register</Link></li>
         </ul>
 
         {/* Mobile Hamburger */}
@@ -51,8 +52,9 @@ const Navbar = () => {
       <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
       <li><Link to="/aboutus" onClick={() => setMenuOpen(false)}>About Us</Link></li>
       <li><Link to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link></li>
-      <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Online Store</Link></li>
-      <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Journal</Link></li>
+      <li><Link to="/onlinestore" onClick={() => setMenuOpen(false)}>Online Store</Link></li>
+      <li><Link to="/journal" onClick={() => setMenuOpen(false)}>Journal</Link></li>
+      <li><Link to="/register" onClick={() => setMenuOpen(false)}>Register</Link></li>
     </ul>
   </div>
 )}
