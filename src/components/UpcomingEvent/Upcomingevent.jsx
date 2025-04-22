@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, A11y, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
@@ -51,6 +52,12 @@ const placeData = [
 ];
 
 const PlaceItem = ({ data }) => {
+  const [showDetails, setShowDetails] = useState(false);
+
+  const toggleDetails = () => {
+    setShowDetails((prev) => !prev);
+  };
+
   return (
     <motion.div
       className="mt-4 w-full max-w-sm cursor-pointer group"
@@ -59,12 +66,13 @@ const PlaceItem = ({ data }) => {
         y: -5,
       }}
       transition={{ type: "spring", stiffness: 200, damping: 15 }}
+      onClick={toggleDetails} // handle mobile tap
     >
       <div className="relative h-[450px] overflow-hidden shadow-xl border border-gray-100">
         {/* Gold accent border */}
         <div className="absolute inset-0 border-2 border-[#D4AF37] opacity-30 z-10 pointer-events-none"></div>
 
-        {/* Background pattern overlay for aesthetic appeal */}
+        {/* Background pattern overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#3D0301]/90 via-[#3D0301]/30 to-transparent opacity-70 z-10"></div>
 
         <img
@@ -73,14 +81,15 @@ const PlaceItem = ({ data }) => {
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
 
-        {/* Details overlay that slides up on hover - covering only half the image */}
+        {/* Slide-up Details */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-1/2 bg-white/95 backdrop-blur-sm text-[#3D0301] 
-                     flex flex-col justify-start items-start p-6 
-                     transform translate-y-full group-hover:translate-y-0 
-                     transition-transform duration-500 ease-in-out 
-                     shadow-[0_-15px_25px_-5px_rgba(0,0,0,0.1)] z-20
-                     border-t-2 border-[#D4AF37]"
+          className={`absolute bottom-0 left-0 right-0 h-1/2 bg-white/95 backdrop-blur-sm text-[#3D0301] 
+            flex flex-col justify-start items-start p-6 
+            transform ${showDetails ? "translate-y-0" : "translate-y-full"} 
+            group-hover:translate-y-0 
+            transition-transform duration-500 ease-in-out 
+            shadow-[0_-15px_25px_-5px_rgba(0,0,0,0.1)] z-20
+            border-t-2 border-[#D4AF37]`}
         >
           <h3 className="text-xl font-bold uppercase mb-3 relative">
             <span className="after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-12 after:h-0.5 after:bg-[#3D0301]">
