@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from "react";
+import storyOne from "../../assets/story-one.jpg";
+import storyTwo from "../../assets/story-two.jpg";
+import storyThree from "../../assets/story-three.jpg";
 
 const products = [
   {
-    img: "https://images.pexels.com/photos/17261593/pexels-photo-17261593/free-photo-of-portrait-of-smiling-indian-couple-in-traditional-costumes.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    img: storyOne,
     title: "Sethu and Vishnu",
     date: "March 15, 2025",
     brief: "A beachside ceremony filled with joy and laughter",
   },
   {
-    img: "https://images.pexels.com/photos/25158843/pexels-photo-25158843/free-photo-of-traditional-indian-wedding-couple.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    img: storyTwo,
     title: "Aditi and Saurabh",
     date: "January 22, 2025",
     brief: "An elegant palace wedding with traditional touches",
   },
   {
-    img: "https://images.pexels.com/photos/16987433/pexels-photo-16987433/free-photo-of-portrait-of-a-traditional-couple-kissing.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img: storyThree,
     title: "Hanna and Shahrukh",
     date: "February 8, 2025",
     brief: "A magical winter celebration under the stars",
@@ -37,15 +40,15 @@ const ProductItem = ({ product }) => {
         }`}
       >
         {/* Front side content */}
-        <div className="h-64 flex justify-center items-center px-6 overflow-hidden bg-white">
+        <div className="h-84 flex justify-center items-center overflow-hidden bg-white p-0">
           <img
             src={product.img}
             alt={product.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 m-0"
           />
         </div>
 
-        <div className="px-6 py-6 absolute bottom-0 left-0 right-0 bg-white">
+        <div className="px-20 py-6 absolute bottom-0 left-0 right-0 bg-white">
           <h2 className="font-serif text-xl font-bold text-red-900 mb-1">
             {product.title}
           </h2>

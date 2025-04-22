@@ -1,34 +1,35 @@
 import React from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, A11y, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-import eventOne from "../../assets/event-one.jpg";
-import eventTwo from "../../assets/event-two.jpg";
-import eventThree from "../../assets/event-three.jpg";
+import redChick from "../../assets/red-chick.jpg";
+import show4 from "../../assets/show4.jpg";
+import hero1 from "../../assets/hero1.jpg";
 import eventFive from "../../assets/event-five.jpg";
-import eventSix from "../../assets/event-six.jpg";
+import green_jewellary from "../../assets/green_jewellary.jpg";
 import { motion } from "framer-motion";
 import { MdLocationOn, MdDateRange, MdPhone } from "react-icons/md";
 
 const placeData = [
   {
-    img: eventOne,
+    img: redChick,
     title: "Wedding Asia",
     date: "3 & 4 May",
     location: "Mumbai",
     call: "+91-9216322509",
   },
   {
-    img: eventTwo,
+    img: show4,
     title: "Luxury Expo",
     date: "10 & 11 May",
     location: "Delhi",
     call: "+91-9876543210",
   },
   {
-    img: eventThree,
+    img: hero1,
     title: "Fashion Fiesta",
     date: "17 & 18 May",
     location: "Bangalore",
@@ -42,7 +43,7 @@ const placeData = [
     call: "+91-9090909090",
   },
   {
-    img: eventSix,
+    img: green_jewellary,
     title: "Royal Vogue",
     date: "7 & 8 June",
     location: "Jaipur",
@@ -51,6 +52,12 @@ const placeData = [
 ];
 
 const PlaceItem = ({ data }) => {
+  const [showDetails, setShowDetails] = useState(false);
+
+  const toggleDetails = () => {
+    setShowDetails((prev) => !prev);
+  };
+
   return (
     <motion.div
       className="mt-4 w-full max-w-sm cursor-pointer group"
@@ -59,12 +66,13 @@ const PlaceItem = ({ data }) => {
         y: -5,
       }}
       transition={{ type: "spring", stiffness: 200, damping: 15 }}
+      onClick={toggleDetails} // handle mobile tap
     >
       <div className="relative h-[450px] overflow-hidden shadow-xl border border-gray-100">
         {/* Gold accent border */}
         <div className="absolute inset-0 border-2 border-[#D4AF37] opacity-30 z-10 pointer-events-none"></div>
 
-        {/* Background pattern overlay for aesthetic appeal */}
+        {/* Background pattern overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#3D0301]/90 via-[#3D0301]/30 to-transparent opacity-70 z-10"></div>
 
         <img
@@ -73,14 +81,15 @@ const PlaceItem = ({ data }) => {
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
 
-        {/* Details overlay that slides up on hover - covering only half the image */}
+        {/* Slide-up Details */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-1/2 bg-white/95 backdrop-blur-sm text-[#3D0301] 
-                     flex flex-col justify-start items-start p-6 
-                     transform translate-y-full group-hover:translate-y-0 
-                     transition-transform duration-500 ease-in-out 
-                     shadow-[0_-15px_25px_-5px_rgba(0,0,0,0.1)] z-20
-                     border-t-2 border-[#D4AF37]"
+          className={`absolute bottom-0 left-0 right-0 h-1/2 bg-white/95 backdrop-blur-sm text-[#3D0301] 
+            flex flex-col justify-start items-start p-6 
+            transform ${showDetails ? "translate-y-0" : "translate-y-full"} 
+            group-hover:translate-y-0 
+            transition-transform duration-500 ease-in-out 
+            shadow-[0_-15px_25px_-5px_rgba(0,0,0,0.1)] z-20
+            border-t-2 border-[#D4AF37]`}
         >
           <h3 className="text-xl font-bold uppercase mb-3 relative">
             <span className="after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-12 after:h-0.5 after:bg-[#3D0301]">
