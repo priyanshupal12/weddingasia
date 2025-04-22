@@ -6,6 +6,7 @@ import AboutUs from './components/AboutUs/AboutUs.jsx'
 import Home from './components/Home/Home.jsx'
 import Scrolltop from './components/Scrolltop.jsx'
 import Gallery from './components/Gallery/Gallery.jsx'
+import Register from './components/Register/Register.jsx'
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -20,6 +21,7 @@ function App() {
   
     <Route path="/aboutus" element={<AboutUs/>} />
     <Route path="/gallery" element={<Gallery/>} />
+    <Route path="/register" element={<Register/>} />
 
     </Routes>
     <Footer />

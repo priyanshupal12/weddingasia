@@ -40,7 +40,7 @@ const Footer = () => {
                     </div>
 
                     <div className="border-t border-stone-700 mt-8 pt-8 text-center">
-                        <p className="text-sm">© {new Date().getFullYear()} [Your Brand]. All rights reserved.</p>
+                        <p className="text-sm">© {new Date().getFullYear()} Jewellery World. All rights reserved.</p>
                     </div>
                 </div>
             </footer>
