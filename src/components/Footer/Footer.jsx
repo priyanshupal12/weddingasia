@@ -1,7 +1,7 @@
 import React from 'react'
-import { FaMeta, FaXTwitter, FaPhone } from "react-icons/fa6";
+import { FaMeta, FaXTwitter, FaPhone, FaLinkedinIn } from "react-icons/fa6";
 import { BsInstagram } from "react-icons/bs";
-import { FaEnvelope } from "react-icons/fa";
+import { FaEnvelope, FaTelegramPlane, FaPinterestP, FaYoutube, FaSnapchatGhost } from "react-icons/fa";
 
 
 
@@ -61,10 +61,10 @@ const Footer = () => {
                                 <div className="mt-4 flex items-center gap-2">
                                     <FaEnvelope className="text-amber-400 w-4 h-4" />
                                     <a
-                                        href="mailto:contact@weddingasia.com"
+                                        href="jewelleryworldexhibitions@gmail.com"
                                         className="hover:underline text-amber-400"
                                     >
-                                        contact@weddingasia.com
+                                        jewelleryworldexhibitions@gmail.com
                                     </a>
                                 </div>
 
@@ -88,18 +88,34 @@ const Footer = () => {
                         {/* Social Icons */}
                         <div>
                             <h4 className="text-xl font-light mb-4 text-white tracking-wide">Follow Us</h4>
-                            <div className="flex space-x-4">
-                                <a href="#" className="hover:text-amber-400 transition-transform transform hover:scale-110 text-2xl">
+                            <div className="grid grid-cols-4 gap-x-1 gap-y-2 max-w-[12rem] text-2xl text-stone-300">
+                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
                                     <BsInstagram />
                                 </a>
-                                <a href="#" className="hover:text-amber-400 transition-transform transform hover:scale-110 text-2xl">
+                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
                                     <FaMeta />
                                 </a>
-                                <a href="#" className="hover:text-amber-400 transition-transform transform hover:scale-110 text-2xl">
+                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
                                     <FaXTwitter />
+                                </a>
+                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
+                                    <FaTelegramPlane />
+                                </a>
+                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
+                                    <FaPinterestP />
+                                </a>
+                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
+                                    <FaYoutube />
+                                </a>
+                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
+                                    <FaLinkedinIn />
+                                </a>
+                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
+                                    <FaSnapchatGhost />
                                 </a>
                             </div>
                         </div>
+
                     </div>
 
                     {/* Footer Bottom */}
