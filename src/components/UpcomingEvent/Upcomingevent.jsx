@@ -10,6 +10,7 @@ import show4 from "../../assets/show4.jpg";
 import hero1 from "../../assets/hero1.jpg";
 import eventFive from "../../assets/event-five.jpg";
 import green_jewellary from "../../assets/green_jewellary.jpg";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MdLocationOn, MdDateRange, MdPhone } from "react-icons/md";
 
@@ -119,14 +120,16 @@ const PlaceItem = ({ data }) => {
         </div>
       </div>
 
-      <motion.button
-        whileTap={{ scale: 0.95 }}
-        className="w-full bg-gradient-to-r from-[#3D0301] to-[#5D0501] text-white uppercase px-4 py-4 
-                   text-center text-lg hover:from-[#5D0501] hover:to-[#3D0301] transition-all duration-300 
-                 shadow-lg font-medium tracking-wide"
-      >
-        Register Now
-      </motion.button>
+      <Link to="/register" className="w-full">
+        <motion.button
+          whileTap={{ scale: 0.95 }}
+          className="w-full bg-gradient-to-r from-[#3D0301] to-[#5D0501] text-white uppercase px-4 py-4 
+               text-center text-lg hover:from-[#5D0501] hover:to-[#3D0301] transition-all duration-300 
+               shadow-lg font-medium tracking-wide"
+        >
+          Register Now
+        </motion.button>
+      </Link>
     </motion.div>
   );
 };
