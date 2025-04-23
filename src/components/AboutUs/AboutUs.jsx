@@ -27,9 +27,6 @@ export default function AboutUs() {
       <div className="relative h-[40rem] overflow-hidden">
         {/* Decorative overlay pattern */}
         <div className="absolute inset-0 bg-black/40 z-10">
-          <div className="absolute inset-0 opacity-20">
-            Background image is now handled by the img tag below
-          </div>
         </div>
 
         {/* The actual banner image */}
@@ -77,17 +74,17 @@ export default function AboutUs() {
       {/* About Content - Redesigned Layout */}
       <div className="container mx-auto px-6 md:px-12 py-20">
         {/* Introduction with decorative elements */}
-        <div className="relative max-w-4xl mx-auto text-center mb-24">
-          <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-px h-16 bg-amber-700"></div>
+        <div className="relative max-w-4xl mx-auto lg:mx-0 text-start mb-24">
+          {/* <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-px h-16 bg-amber-700"></div> */}
 
           <h2 className="text-3xl md:text-4xl font-light text-stone-800 mb-8">
             A Legacy of Elegance
           </h2>
 
-          <div className="w-24 h-px bg-amber-700 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-amber-700 mb-8"></div>
 
           <p className="text-lg text-stone-600 leading-relaxed">
-            At WeddingAsia, we believe that wedding jewelry is more than adornment—it's an expression of love and commitment that becomes part of your family's legacy. Each piece in our collection is thoughtfully designed and meticulously crafted to mark the most special moments in your life.
+            At Jewellery World, we believe that wedding jewelry is more than adornment—it's an expression of love and commitment that becomes part of your family's legacy. Each piece in our collection is thoughtfully designed and meticulously crafted to mark the most special moments in your life.
           </p>
         </div>
 
@@ -107,7 +104,7 @@ export default function AboutUs() {
           <div className="space-y-8">
             <h2 className="text-3xl font-light text-stone-800 mb-6 inline-block relative">
               Our Philosophy
-              <span className="absolute -bottom-2 left-0 w-1/3 h-px bg-amber-700"></span>
+              <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-amber-700"></span>
             </h2>
 
             <p className="text-stone-600 leading-relaxed">
@@ -163,11 +160,11 @@ export default function AboutUs() {
 
         {/* Collection Highlights - Redesigned with Overlays */}
         <div className="mb-32">
-          <div className="text-center mb-16">
+          <div className="text-start mb-16">
             <h2 className="text-3xl md:text-4xl font-light text-stone-800 mb-4">
               Signature Collections
             </h2>
-            <div className="w-24 h-px bg-amber-700 mx-auto"></div>
+            <div className="w-24 h-1 bg-amber-700"></div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -214,11 +211,11 @@ export default function AboutUs() {
         {/* Materials Section - Redesigned in Circular Layout */}
         <div className="py-20 bg-stone-100 rounded-lg mb-32">
           <div className="container mx-auto px-6 md:px-12">
-            <div className="text-center mb-16">
+            <div className="text-start mb-16">
               <h2 className="text-3xl md:text-4xl font-light text-stone-800 mb-4">
                 Exquisite Materials
               </h2>
-              <div className="w-24 h-px bg-amber-700 mx-auto"></div>
+              <div className="w-24 h-1 bg-amber-700"></div>
             </div>
 
             <div className="grid md:grid-cols-4 gap-8">
@@ -267,11 +264,11 @@ export default function AboutUs() {
 
         {/* Team Section - Redesigned with Hover Effects */}
         <div className="mb-32">
-          <div className="text-center mb-16">
+          <div className="text-start mb-16">
             <h2 className="text-3xl md:text-4xl font-light text-stone-800 mb-4">
               Meet Our Artisans
             </h2>
-            <div className="w-24 h-px bg-amber-700 mx-auto"></div>
+            <div className="w-24 h-1 bg-amber-700"></div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
@@ -325,7 +322,7 @@ export default function AboutUs() {
             <h2 className="text-3xl md:text-4xl font-light text-stone-800 mb-4">
               Client Stories
             </h2>
-            <div className="w-24 h-px bg-amber-700 mx-auto"></div>
+            <div className="w-24 h-1 bg-amber-700 mx-auto"></div>
           </div>
 
           <div className="max-w-3xl mx-auto">
@@ -363,15 +360,15 @@ export default function AboutUs() {
       {/* Process Section - Redesigned with Timeline */}
       <div className="py-20">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="text-center mb-16">
+          <div className="text-start mb-16">
             <h2 className="text-3xl md:text-4xl font-light text-stone-800 mb-4">
               Our Crafting Process
             </h2>
-            <div className="w-24 h-px bg-amber-700 mx-auto"></div>
+            <div className="w-24 h-1 bg-amber-700"></div>
           </div>
 
           <div className="relative">
-            
+
             <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-px bg-amber-200 hidden md:block"></div>
 
             <div className="space-y-20 md:space-y-0">
@@ -419,7 +416,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      
+
     </div>
   );
 }
