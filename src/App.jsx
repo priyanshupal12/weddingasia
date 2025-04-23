@@ -7,7 +7,8 @@ import Home from './components/Home/Home.jsx'
 import Scrolltop from './components/Scrolltop.jsx'
 
 import { Routes, Route } from 'react-router-dom';
-import JournalPage from './components/Journal/JournalPage.jsx'
+import Gallery from './components/Gallery/Gallery.jsx'
+import Register from './components/Register/Register.jsx'
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
     <Route path="/" element={<Home />} />
   
     <Route path="/aboutus" element={<AboutUs/>} />
-
+    <Route path="/gallery" element={<Gallery />} />
+    {/* <Route path="/onlinestore" element={<OnlineStore />} /> */}
+    <Route path="/register" element={<Register />} />
     </Routes>
     <Footer />
     </React.Fragment>
