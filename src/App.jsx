@@ -9,6 +9,7 @@ import Scrolltop from './components/Scrolltop.jsx'
 import { Routes, Route } from 'react-router-dom';
 import Gallery from './components/Gallery/Gallery.jsx'
 import Register from './components/Register/Register.jsx'
+import Journal from './components/Journal/Journal.jsx'
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
   
     <Route path="/aboutus" element={<AboutUs/>} />
     <Route path="/gallery" element={<Gallery />} />
-    {/* <Route path="/onlinestore" element={<OnlineStore />} /> */}
+    <Route path="/journal" element={<Journal />} />
     <Route path="/register" element={<Register />} />
     </Routes>
     <Footer />
