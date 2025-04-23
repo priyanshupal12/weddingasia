@@ -2,7 +2,7 @@ import React from 'react'
 import Hero from '../Hero/Hero'
 import Eventshowcase from '../EventShowcase/Eventshowcase';
 import Upcomingevent from '../UpcomingEvent/Upcomingevent';
-import WeddingStory from '../WeddingStory/WeddingStory';
+// import WeddingStory from '../WeddingStory/WeddingStory';
 import Journal from '../Journal/Journal';
 
 
@@ -13,7 +13,7 @@ function Home() {
       <Hero />
       <Upcomingevent />
       <Eventshowcase />
-      <WeddingStory/>
+      {/* <WeddingStory/> */}
       <Journal/>
  
 

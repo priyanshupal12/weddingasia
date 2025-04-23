@@ -5,6 +5,7 @@ import blogTwo from "../../assets/blog-two.jpg";
 import blogThree from "../../assets/blog-three.jpg";
 import { motion } from "framer-motion";
 
+
 const teamMembers = [
   {
     img: blogOne,
@@ -31,13 +32,13 @@ const TeamMemberItem = ({ member }) => (
         alt={member.name}
         className="w-full h-full object-cover"
         animate={{
-          scale: [1.1, 1], // Slightly reduced zoom for smoother feel
+          scale: [1.1, 1], 
         }}
         transition={{
-          duration: 6, // Slightly faster but still slow enough for smoothness
+          duration: 6, 
           repeat: Infinity,
-          repeatType: "mirror", // Smooth back and forth
-          ease: "easeInOut", // Smooth easing
+          repeatType: "mirror", 
+          ease: "easeInOut", 
         }}
       />
     </div>
@@ -103,7 +104,7 @@ const Journal = () => {
         {/* Show More Journals Button */}
         <div className="mt-12 text-center">
           <Link
-            to="/contact"
+            to="/journal"
             className="inline-block px-6 py-3 bg-gradient-to-r from-[#3D0301] via-[#5A0C07] to-[#3D0301] text-white font-semibold shadow-lg hover:brightness-110 transition-all duration-300"
           >
             Show More Journals

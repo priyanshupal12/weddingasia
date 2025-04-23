@@ -10,44 +10,63 @@ import show4 from "../../assets/show4.jpg";
 import hero1 from "../../assets/hero1.jpg";
 import eventFive from "../../assets/event-five.jpg";
 import green_jewellary from "../../assets/green_jewellary.jpg";
+import twinGirls from "../../assets/twin-girls.jpg";
+import show6 from "../../assets/show6.jpg"
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MdLocationOn, MdDateRange, MdPhone } from "react-icons/md";
 
 const placeData = [
   {
     img: redChick,
-    title: "Wedding Asia",
-    date: "3 & 4 May",
-    location: "Mumbai",
-    call: "+91-9216322509",
+    title: "JEWELLERY WORLD",
+    date: "11.12.13 JULY",
+    location: "YMCA AHMEDABAD",
+    call: "+91-9323727518",
   },
   {
     img: show4,
-    title: "Luxury Expo",
-    date: "10 & 11 May",
-    location: "Delhi",
-    call: "+91-9876543210",
+    title: "JEWELLERY WORLD",
+    date: "25.26.27 JULY",
+    location: "ST.REGIS MUMBAI",
+    call: "+91-9323727518",
   },
   {
     img: hero1,
-    title: "Fashion Fiesta",
-    date: "17 & 18 May",
-    location: "Bangalore",
-    call: "+91-9123456789",
+    title: "JEWELLERY WORLD",
+    date: "29.30 AUGEST",
+    location: "THE ASHOK DELHI",
+    call: "+91-9323727518",
   },
   {
     img: eventFive,
-    title: "Elite Showcase",
-    date: "31 May & 1 June",
-    location: "Chandigarh",
-    call: "+91-9090909090",
+    title: "JEWELLERY WORLD",
+    date: "26.27 SEPTEMBER",
+    location: "HOTEL MARRIOTT INDORE",
+    call: "+91-9323727518",
   },
   {
     img: green_jewellary,
-    title: "Royal Vogue",
-    date: "7 & 8 June",
-    location: "Jaipur",
-    call: "+91-8877665544",
+    title: "JEWELLERY WORLD",
+    date: "03.04.05 OCTOBER",
+    location: "TAJ KRISHNA HYDERABAD",
+    call: "+91-9323727518",
+  },
+
+  {
+    img: twinGirls,
+    title: "JEWELLERY WORLD",
+    date: "21.22.23 NOVEMBER",
+    location: "YMCA AHMEDABAD",
+    call: "+91-9323727518",
+  },
+
+  {
+    img: show6,
+    title: "JEWELLERY WORLD",
+    date: "14.15.16 NOVEMBER",
+    location: "ST.REGIS MUMBAI",
+    call: "+91-9323727518",
   },
 ];
 
@@ -119,14 +138,16 @@ const PlaceItem = ({ data }) => {
         </div>
       </div>
 
-      <motion.button
-        whileTap={{ scale: 0.95 }}
-        className="w-full bg-gradient-to-r from-[#3D0301] to-[#5D0501] text-white uppercase px-4 py-4 
-                   text-center text-lg hover:from-[#5D0501] hover:to-[#3D0301] transition-all duration-300 
-                 shadow-lg font-medium tracking-wide"
-      >
-        Register Now
-      </motion.button>
+      <Link to="/register" className="w-full">
+        <motion.button
+          whileTap={{ scale: 0.95 }}
+          className="w-full bg-gradient-to-r from-[#3D0301] to-[#5D0501] text-white uppercase px-4 py-4 
+               text-center text-lg hover:from-[#5D0501] hover:to-[#3D0301] transition-all duration-300 
+               shadow-lg font-medium tracking-wide"
+        >
+          Register Now
+        </motion.button>
+      </Link>
     </motion.div>
   );
 };
