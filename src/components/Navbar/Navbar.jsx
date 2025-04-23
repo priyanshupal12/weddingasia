@@ -32,7 +32,7 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Hamburger */}
-        <div className="md:hidden">
+        <div className="md:hidden text-white">
           <button onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>

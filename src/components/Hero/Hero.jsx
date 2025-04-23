@@ -33,19 +33,19 @@ export default function Hero() {
   const slides = [
     {
       image: hero5,
-      title: "Luxury Bridal Collection",
+      title: "Premium Wedding Jewellery",
       subtitle: "Elegance for Your Special Day",
       cta: "Explore Collection"
     },
     {
       image: hero2,
-      title: "Premium Wedding Attire",
+      title: "Exclusive Bridal Jewellery",
       subtitle: "Timeless Designs for Perfect Moments",
       cta: "View Catalog"
     },
     {
       image: hero3,
-      title: "Exclusive Bridal Wear",
+      title: "Luxury Bridal Jewellery Collections",
       subtitle: "Handcrafted with Attention to Detail",
       cta: "Shop Now"
     }
@@ -180,7 +180,7 @@ export default function Hero() {
                     {/* Title with typewriter effect - only show for active slide */}
                     {activeIndex === index && (
                       <>
-                        <h1 className="text-5xl md:text-7xl font-light text-white mb-4 tracking-wide leading-tight">
+                        <h1 className="text-4xl md:text-7xl font-light text-white mb-4 tracking-wide leading-tight">
                           {typedTitle}
                           {!titleComplete && (
                             <span className="inline-block w-1 h-12 bg-amber-400 animate-pulse ml-1"></span>

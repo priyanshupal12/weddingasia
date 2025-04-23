@@ -9,7 +9,7 @@ import Scrolltop from './components/Scrolltop.jsx'
 import { Routes, Route } from 'react-router-dom';
 import Gallery from './components/Gallery/Gallery.jsx'
 import Register from './components/Register/Register.jsx'
-import Journal from './components/Journal/Journal.jsx'
+import JournalPage from './components/Journal/JournalPage.jsx'
 
 function App() {
   return (
@@ -19,10 +19,9 @@ function App() {
      <Routes>
    
     <Route path="/" element={<Home />} />
-  
     <Route path="/aboutus" element={<AboutUs/>} />
     <Route path="/gallery" element={<Gallery />} />
-    <Route path="/journal" element={<Journal />} />
+    <Route path="/journal" element={<JournalPage />} />
     <Route path="/register" element={<Register />} />
     </Routes>
     <Footer />
