@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { Search } from "lucide-react";
 
 const blogs = [
   {
@@ -52,53 +53,75 @@ const blogs = [
   },
 ];
 
-const BlogItem = ({ blog, index }) => {
+const BlogItem = ({ blog, index, isVisible }) => {
   const { title, description, image, category } = blog;
   const [isHovered, setIsHovered] = useState(false);
+  
+  const animationDelay = `${index * 150}ms`;
 
   return (
     <article
-      className={`group relative overflow-hidden rounded-xl shadow-lg transition-all duration-500 transform hover:scale-105 ${
-        index % 3 === 0 ? "lg:col-span-2" : "lg:col-span-1"
-      } h-full flex flex-col bg-white `}
+      className={`group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-700 transform
+        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
+        ${index % 3 === 0 ? 'lg:col-span-2' : 'lg:col-span-1'}
+        h-full flex flex-col bg-white hover:shadow-xl`}
+      style={{ transitionDelay: animationDelay }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative overflow-hidden h-64">
-        <div className="absolute top-4 left-4 z-10">
-          <span className="bg-pink-100 text-pink-800 text-xs font-medium px-3 py-1 rounded-full">
+      <div className="relative overflow-hidden h-72">
+        {/* Category badge */}
+        <div 
+          className={`absolute top-4 left-4 z-20 transition-transform duration-300 ${
+            isHovered ? 'translate-y-0' : 'translate-y-0'
+          }`}
+        >
+          <span className="bg-gradient-to-r from-[#3D0301] to-[#8B0000] text-white text-xs font-medium px-4 py-1.5 rounded-full shadow-md">
             {category}
           </span>
         </div>
+        
+        {/* Overlay on hover */}
         <div
-          className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${
-            isHovered ? "opacity-50" : "opacity-0"
+          className={`absolute inset-0 bg-gradient-to-t from-[#3D0301]/90 via-[#3D0301]/60 to-[#3D0301]/30 transition-opacity duration-300 z-10 ${
+            isHovered ? 'opacity-100' : 'opacity-0'
           }`}
         ></div>
+        
+        {/* Image */}
         <img
           src={image}
           alt={title}
-          className="h-full w-full object-cover object-top transition-transform duration-700 ease-in-out transform group-hover:scale-110"
+          className="h-full w-full object-cover transition-transform duration-700 ease-in-out transform group-hover:scale-110"
         />
+        
+        {/* Text overlay that appears on hover */}
+        <div className={`absolute bottom-0 left-0 right-0 p-6 text-white transform transition-all duration-500 z-10 ${
+            isHovered ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          }`}>
+          <h3 className="font-serif text-2xl font-medium mb-2 line-clamp-2">{title}</h3>
+          <div className="w-16 h-0.5 bg-white mb-3 transition-all duration-500 group-hover:w-24"></div>
+          <p className="text-white/90 text-sm line-clamp-2">{description}</p>
+        </div>
       </div>
 
       <div className="flex-1 p-6 flex flex-col">
         <h3 className="font-serif text-xl font-medium mb-3 line-clamp-2">
           {title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
+        <p className="text-gray-600 text-sm mb-4 line-clamp-3">
           {description}
         </p>
         <div className="mt-auto">
           <a
             href="#"
-            className="inline-block relative overflow-hidden bg-white text-pink-600 text-sm font-medium px-5 py-2.5 rounded-lg border border-pink-200 shadow-sm transition-all duration-300 hover:bg-pink-50 hover:border-pink-300 hover:shadow-md"
+            className="inline-block relative overflow-hidden text-[#3D0301] text-sm font-medium group-hover:text-[#6B0000] transition-all duration-300"
           >
-            <span className="relative flex items-center justify-center gap-2">
-              <span>Read More</span>
+            <span className="relative flex items-center gap-2">
+              <span>Read Article</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 transition-transform duration-300 transform group-hover:translate-x-1"
+                className="h-4 w-4 transition-transform duration-300 transform group-hover:translate-x-2"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -111,6 +134,7 @@ const BlogItem = ({ blog, index }) => {
                 />
               </svg>
             </span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#6B0000] transition-all duration-300 group-hover:w-full"></span>
           </a>
         </div>
       </div>
@@ -118,148 +142,203 @@ const BlogItem = ({ blog, index }) => {
   );
 };
 
-const FilterButton = ({ active, onClick, children }) => (
+const FilterTab = ({ active, onClick, children }) => (
   <button
     onClick={onClick}
-    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+    className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
       active
-        ? "bg-pink-100 text-pink-700"
-        : "bg-gray-100 text-gray-600 hover:bg-pink-50 hover:text-pink-500"
+        ? "bg-gradient-to-r from-[#3D0301] to-[#8B0000] text-white shadow-lg shadow-[#3D0301]/20"
+        : "bg-white/80 text-gray-600 hover:bg-[#3D0301]/5 hover:text-[#3D0301] shadow-sm"
     }`}
   >
     {children}
   </button>
 );
 
-const JournalPage = () => {
+const ModernJournalPage = () => {
   const [filter, setFilter] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
   const [filteredBlogs, setFilteredBlogs] = useState(blogs);
-  const [animateHeader, setAnimateHeader] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const blogGridRef = useRef(null);
 
   useEffect(() => {
-    setAnimateHeader(true);
+    setVisible(true);
 
-    if (filter === "All") {
-      setFilteredBlogs(blogs);
-    } else {
-      setFilteredBlogs(blogs.filter((blog) => blog.category === filter));
+    const filtered = blogs.filter(blog => {
+      const matchesFilter = filter === "All" || blog.category === filter;
+      const matchesSearch = blog.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                           blog.description.toLowerCase().includes(searchTerm.toLowerCase());
+      return matchesFilter && matchesSearch;
+    });
+    
+    setFilteredBlogs(filtered);
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (blogGridRef.current) {
+      observer.observe(blogGridRef.current);
     }
-  }, [filter]);
+    
+    return () => {
+      if (blogGridRef.current) {
+        observer.unobserve(blogGridRef.current);
+      }
+    };
+  }, [filter, searchTerm]);
 
   const categories = ["All", ...new Set(blogs.map((blog) => blog.category))];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-pink-50 to-white overflow-hidden">
+    <section className="py-20 md:py-32 bg-gradient-to-br from-[#F9EDED] via-white to-[#F0E3E3] overflow-hidden relative">
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 opacity-10">
-        <svg width="404" height="404" fill="none" viewBox="0 0 404 404">
-          <defs>
-            <pattern
-              id="flowers"
-              x="0"
-              y="0"
-              width="20"
-              height="20"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M10 0C8.3 0 7 1.3 7 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm0 18c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z"
-                fill="currentColor"
-              />
-            </pattern>
-          </defs>
-          <rect width="404" height="404" fill="url(#flowers)" />
-        </svg>
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-40">
+        <div className="absolute -top-40 -left-40 w-80 h-80 bg-[#3D0301]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div className="absolute top-0 -right-20 w-72 h-72 bg-[#6B0000]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-40 left-20 w-72 h-72 bg-[#8B0000]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2
-            className={`font-serif text-5xl md:text-6xl font-light mb-6 transition-all duration-1000 ${
-              animateHeader
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
+            className={`font-serif text-6xl md:text-7xl font-light mb-8 transition-all duration-1000 ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            Wedding <span className="font-medium text-pink-600">Journal</span>
+            <span className="relative inline-block">
+              Wedding
+              <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#3D0301] to-transparent"></span>
+            </span>{" "}
+            <span className="font-medium bg-gradient-to-r from-[#3D0301] to-[#8B0000] bg-clip-text text-transparent">Journal</span>
           </h2>
-          <div className="w-24 h-1 bg-pink-300 mx-auto mb-8"></div>
-          <p className="text-gray-600 text-lg mb-10 max-w-2xl mx-auto">
+          
+          <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto transition-all duration-1000 delay-300" style={{ 
+            transitionDelay: '300ms',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(20px)'
+          }}>
             Explore our curated collection of wedding inspiration, planning
-            advice, and the latest trends for your special day.
+            advice, and the latest trends to create your perfect celebration.
           </p>
 
+          {/* Search Bar */}
+          <div className="relative max-w-md mx-auto mb-12 transition-all duration-1000 delay-500" style={{ 
+            transitionDelay: '500ms',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(20px)'
+          }}>
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search articles..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full py-3 pl-5 pr-12 bg-white/80 backdrop-blur-sm border border-[#3D0301]/10 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-[#3D0301]/20 transition-all"
+              />
+              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#3D0301]">
+                <Search size={20} />
+              </div>
+            </div>
+          </div>
+
           {/* Filters */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
+          <div className="flex flex-wrap justify-center gap-3 mb-16 transition-all duration-1000 delay-700" style={{ 
+            transitionDelay: '700ms',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(20px)'
+          }}>
             {categories.map((category) => (
-              <FilterButton
+              <FilterTab
                 key={category}
                 active={filter === category}
                 onClick={() => setFilter(category)}
               >
                 {category}
-              </FilterButton>
+              </FilterTab>
             ))}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {filteredBlogs.map((blog, i) => (
-            <BlogItem blog={blog} index={i} key={i} />
-          ))}
+        <div 
+          ref={blogGridRef}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
+        >
+          {filteredBlogs.length > 0 ? (
+            filteredBlogs.map((blog, i) => (
+              <BlogItem blog={blog} index={i} key={i} isVisible={visible} />
+            ))
+          ) : (
+            <div className="col-span-full text-center py-16">
+              <h3 className="text-2xl font-medium text-[#3D0301] mb-4">No articles found</h3>
+              <p className="text-gray-500">Try adjusting your search or filter criteria</p>
+            </div>
+          )}
         </div>
 
         {/* Pagination */}
-        <div className="mt-16 flex justify-center">
-          <nav className="inline-flex items-center gap-1 rounded-lg border border-gray-200 bg-white px-1 py-1 shadow-sm">
-            <button className="inline-flex h-8 w-8 items-center justify-center rounded-md text-gray-500 hover:bg-pink-50">
-              <span className="sr-only">Previous</span>
-              <svg
-                className="h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </button>
+        {filteredBlogs.length > 0 && (
+          <div className="mt-20 flex justify-center transition-all duration-1000 delay-1000" style={{ 
+            transitionDelay: '1000ms',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(20px)'
+          }}>
+            <nav className="inline-flex items-center gap-2 p-1 rounded-full bg-white/80 backdrop-blur-sm shadow-lg">
+              <button className="inline-flex h-10 w-10 items-center justify-center rounded-full text-gray-500 hover:bg-[#3D0301]/5 transition-colors">
+                <span className="sr-only">Previous</span>
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
 
-            <button className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-pink-600 text-white shadow-sm">
-              1
-            </button>
-            <button className="inline-flex h-8 w-8 items-center justify-center rounded-md text-gray-600 hover:bg-pink-50">
-              2
-            </button>
-            <button className="inline-flex h-8 w-8 items-center justify-center rounded-md text-gray-600 hover:bg-pink-50">
-              3
-            </button>
+              <button className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#3D0301] to-[#8B0000] text-white shadow-md">
+                1
+              </button>
+              <button className="inline-flex h-10 w-10 items-center justify-center rounded-full text-gray-600 hover:bg-[#3D0301]/5 transition-colors">
+                2
+              </button>
+              <button className="inline-flex h-10 w-10 items-center justify-center rounded-full text-gray-600 hover:bg-[#3D0301]/5 transition-colors">
+                3
+              </button>
 
-            <button className="inline-flex h-8 w-8 items-center justify-center rounded-md text-gray-500 hover:bg-pink-50">
-              <span className="sr-only">Next</span>
-              <svg
-                className="h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-          </nav>
-        </div>
+              <button className="inline-flex h-10 w-10 items-center justify-center rounded-full text-gray-500 hover:bg-[#3D0301]/5 transition-colors">
+                <span className="sr-only">Next</span>
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </nav>
+          </div>
+        )}
       </div>
     </section>
   );
 };
 
-export default JournalPage;
+export default ModernJournalPage;
