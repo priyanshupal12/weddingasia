@@ -8,6 +8,7 @@ import Scrolltop from './components/Scrolltop.jsx'
 import { Routes, Route } from 'react-router-dom';
 
 import Gallery from './components/Gallery/Gallery.jsx'
+import GalleryDetails from './components/Gallery/GalleryDetails.jsx'
 import Register from './components/Register/Register.jsx'
 import JournalPage from './components/Journal/JournalPage.jsx'
 
@@ -15,15 +16,18 @@ function App() {
   return (
     <React.Fragment>
       <Scrolltop />
-       <Navbar />
-     <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/aboutus" element={<AboutUs/>} />
-    <Route path="/gallery" element={<Gallery />} />
-    <Route path="/journal" element={<JournalPage />} />
-    <Route path="/register" element={<Register />} />
-    </Routes>
-    <Footer />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route>
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallery/:id" element={<GalleryDetails />} />
+        </Route>
+        <Route path="/journal" element={<JournalPage />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+      <Footer />
     </React.Fragment>
   )
 }

@@ -50,45 +50,52 @@ const Register = () => {
   // List of upcoming locations in Indian cities
   const upcomingLocations = [
     {
-      city: "Mumbai",
+      city: "YMCA AHMEDABAD",
       address: "Luxury Galleria, Bandra West",
-      date: "May 15 - June 30, 2025",
+      date: "11.12.13 JULY, 2025",
       details: "Exclusive pop-up showcase featuring our premium collection",
       color: "amber-700"
     },
     {
-      city: "Delhi",
+      city: "THE ASHOK DELHI",
       address: "Imperial Arcade, Connaught Place",
-      date: "July 10 - August 20, 2025",
+      date: "29.30 AUG, 2025",
       details: "Grand opening of our flagship store",
       color: "amber-700"
     },
     {
-      city: "Bangalore",
+      city: "TAJ KRISHNA HYDERABAD",
       address: "The Promenade, Indiranagar",
-      date: "September 5 - October 15, 2025",
+      date: "03.04.05 OCT, 2025",
       details: "Special exhibition with limited edition pieces",
       color: "amber-700"
     },
     {
-      city: "Jaipur",
+      city: "ST. REGIS MUMBAI",
       address: "Heritage Emporium, Civil Lines",
-      date: "November 1 - December 10, 2025",
+      date: "25.26.27 JULY, 2025",
       details: "Traditional craftsmanship showcase",
       color: "amber-700"
     },
     {
-      city: "Chennai",
+      city: "HOTEL MARRIOTT INDORE",
       address: "Oceanside Mall, ECR Road",
-      date: "January 5 - February 20, 2026",
+      date: "26.27 SEPT, 2025",
       details: "New year collection launch",
       color: "amber-700"
     },
     {
-      city: "Kolkata",
+      city: "ST. REGIS MUMBAI",
       address: "Victorian Gallery, Park Street",
-      date: "March 12 - April 25, 2026",
+      date: "14.15.16 NOV, 2025",
       details: "Spring collection preview",
+      color: "amber-700"
+    },
+    {
+      city: "YMCA AHMEDABAD",
+      address: "Luxury Galleria, Bandra West",
+      date: "21.22.23 NOV, 2025",
+      details: "Exclusive pop-up showcase featuring our premium collection",
       color: "amber-700"
     }
   ];
@@ -98,21 +105,21 @@ const Register = () => {
     {
       icon: <Phone className="h-5 w-5" />,
       title: "Call Us",
-      details: "+91 98765 43210",
+      details: "+91 9323275057",
       action: "tel:+919876543210",
       actionText: "Call Now"
     },
     {
       icon: <Mail className="h-5 w-5" />,
       title: "Email Us",
-      details: "info@luxuryjewellery.com",
-      action: "mailto:info@luxuryjewellery.com",
+      details: "jewelleryworldexhibitions@gmail.com",
+      action: "mailto:jewelleryworldexhibitions@gmail.com",
       actionText: "Send Email"
     },
     {
       icon: <Globe className="h-5 w-5" />,
       title: "Head Office",
-      details: "Diamond Plaza, Mumbai",
+      details: "Piramal Nagar, Goregaon West, Mumbai",
       action: "https://maps.google.com",
       actionText: "View Map"
     }

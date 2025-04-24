@@ -5,12 +5,12 @@ import { Pagination, Autoplay, A11y, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-import redChick from "../../assets/red-chick.jpg";
+import redcolorgirl from "../../assets/red_color_girl.jpg";
 import show4 from "../../assets/show4.jpg";
 import hero1 from "../../assets/hero1.jpg";
 import eventFive from "../../assets/event-five.jpg";
 import green_jewellary from "../../assets/green_jewellary.jpg";
-import twinGirls from "../../assets/twin-girls.jpg";
+import twinGirls from "../../assets/twins.jpg";
 import show6 from "../../assets/show6.jpg"
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -18,7 +18,7 @@ import { MdLocationOn, MdDateRange, MdPhone } from "react-icons/md";
 
 const placeData = [
   {
-    img: redChick,
+    img: redcolorgirl,
     title: "JEWELLERY WORLD",
     date: "11.12.13 JULY",
     location: "YMCA AHMEDABAD",
