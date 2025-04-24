@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react'; // icons
 import { Link } from 'react-router-dom'; // optional, if using routing
+import logo from '../../assets/logo1.png'; // logo image
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,16 +20,18 @@ const Navbar = () => {
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 border-b border-white ${scrolled ? 'bg-gradient-to-b from-stone-900 to-stone-800 shadow-md' : 'bg-transparent'}`}>
       <nav className="  px-4 sm:px-6 lg:px-8 flex items-center justify-between h-18">
         {/* Left - Logo */}
-        <div className="text-xl font-bold tracking-wide font-serif text-white">JEWELLERY WORLD</div>
+        <Link to="/">
+          <img src={logo} alt="Jewellery World Logo" className="h-12 w-auto object-contain" />
+        </Link>
 
         {/* Right - Desktop Menu */}
         <ul className="hidden md:flex  space-x-14  font-medium font-serif text-white">
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/">Home</Link></li>
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/aboutus">About Us</Link></li>
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/gallery">Gallery</Link></li>
-          <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/onlinestore">Online Store</Link></li>
+          {/* <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/onlinestore">Online Store</Link></li> */}
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/journal">Journal</Link></li>
-          <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/register">Register</Link></li>
+          <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/register">Contact us</Link></li>
         </ul>
 
         {/* Mobile Hamburger */}
@@ -52,9 +55,9 @@ const Navbar = () => {
       <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
       <li><Link to="/aboutus" onClick={() => setMenuOpen(false)}>About Us</Link></li>
       <li><Link to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link></li>
-      <li><Link to="/onlinestore" onClick={() => setMenuOpen(false)}>Online Store</Link></li>
+      {/* <li><Link to="/onlinestore" onClick={() => setMenuOpen(false)}>Online Store</Link></li> */}
       <li><Link to="/journal" onClick={() => setMenuOpen(false)}>Journal</Link></li>
-      <li><Link to="/register" onClick={() => setMenuOpen(false)}>Register</Link></li>
+      <li><Link to="/register" onClick={() => setMenuOpen(false)}>Contact us</Link></li>
     </ul>
   </div>
 )}

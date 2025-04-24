@@ -12,9 +12,9 @@ function Home() {
 
       <Hero />
       <Upcomingevent />
-      <Eventshowcase />
+      {/* <Eventshowcase /> */}
       {/* <WeddingStory/> */}
-      <Journal/>
+      {/* <Journal/> */}
  
 
       {/* Add more components here as needed */}

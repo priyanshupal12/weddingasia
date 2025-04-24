@@ -216,14 +216,14 @@ export default function Hero() {
                           : 'opacity-0 translate-y-8'
                       }`}
                     >
-                      <button className="px-8 py-4 bg-amber-400 text-stone-900 hover:bg-amber-300 transition duration-300 flex items-center group">
+                      {/* <button className="px-8 py-4 bg-amber-400 text-stone-900 hover:bg-amber-300 transition duration-300 flex items-center group">
                         <span className="font-medium">{slide.cta}</span>
                         <ShoppingBag className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </button>
-                      <button className="px-8 py-4 border border-white text-white hover:bg-white/10 transition duration-300 flex items-center group">
+                      </button> */}
+                      {/* <button className="px-8 py-4 border border-white text-white hover:bg-white/10 transition duration-300 flex items-center group">
                         <span>Book Appointment</span>
                         <Calendar className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </div>
