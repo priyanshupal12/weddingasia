@@ -79,8 +79,7 @@ const Footer = () => {
                         <div>
                             <h4 className="text-xl font-light mb-4 text-white tracking-wide">Hours</h4>
                             <ul className="text-stone-300 space-y-2 text-md">
-                                <li>Mon – Fri: 10am – 7pm</li>
-                                <li>Saturday: 10am – 6pm</li>
+                                <li>Monday - Saturday: 10am - 6pm</li>
                                 <li>Sunday: <span className="italic text-stone-400">By Appointment Only</span></li>
                             </ul>
                         </div>
@@ -89,28 +88,28 @@ const Footer = () => {
                         <div>
                             <h4 className="text-xl font-light mb-4 text-white tracking-wide">Follow Us</h4>
                             <div className="grid grid-cols-4 gap-x-1 gap-y-2 max-w-[12rem] text-2xl text-stone-300">
-                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
+                                <a href="https://www.instagram.com/jewelleryworld_exhibitions/" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
                                     <BsInstagram />
                                 </a>
-                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
+                                <a href="facebook.com/JewelleryWorldExhibitions" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
                                     <FaMeta />
                                 </a>
-                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
+                                <a href="https://x.com/JWExbihitions" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
                                     <FaXTwitter />
                                 </a>
-                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
+                                <a href="https://t.me/JewelleryWorldExhibitons" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
                                     <FaTelegramPlane />
                                 </a>
-                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
+                                <a href="https://in.pinterest.com/jewelleryworldexhibitions/" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
                                     <FaPinterestP />
                                 </a>
-                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
+                                <a href="https://www.youtube.com/@JewelleryWorldExhibitions" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
                                     <FaYoutube />
                                 </a>
-                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
+                                <a href="https://www.linkedin.com/company/101981114/admin/feed/posts/?feedType=following" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
                                     <FaLinkedinIn />
                                 </a>
-                                <a href="#" className="hover:text-amber-400 transition-transform hover:scale-110">
+                                <a href="https://www.snapchat.com/add/jewellery_exhi" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
                                     <FaSnapchatGhost />
                                 </a>
                             </div>
