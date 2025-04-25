@@ -1,251 +1,302 @@
-import React from "react";
-import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, A11y, EffectCoverflow } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
-import redcolorgirl from "../../assets/red_color_girl.jpg";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import show1 from "../../assets/show1.jpg"; // Replace with jewelry images
+import show2 from "../../assets/show2.jpg";
+import show3 from "../../assets/show3.jpg";
 import show4 from "../../assets/show4.jpg";
+import show5 from "../../assets/show5.jpg";
+import show6 from "../../assets/show6.jpg";
 import hero1 from "../../assets/hero1.jpg";
-import eventFive from "../../assets/event-five.jpg";
-import green_jewellary from "../../assets/green_jewellary.jpg";
-import twinGirls from "../../assets/twins.jpg";
-import show6 from "../../assets/show6.jpg"
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { MdLocationOn, MdDateRange, MdPhone } from "react-icons/md";
 
-const placeData = [
-  {
-    img: redcolorgirl,
-    title: "JEWELLERY WORLD",
-    date: "11.12.13 JULY",
-    location: "YMCA AHMEDABAD",
-    call: "+91-9323727518",
-  },
-  {
-    img: show4,
-    title: "JEWELLERY WORLD",
-    date: "25.26.27 JULY",
-    location: "ST.REGIS MUMBAI",
-    call: "+91-9323727518",
-  },
-  {
-    img: hero1,
-    title: "JEWELLERY WORLD",
-    date: "29.30 AUGEST",
-    location: "THE ASHOK DELHI",
-    call: "+91-9323727518",
-  },
-  {
-    img: eventFive,
-    title: "JEWELLERY WORLD",
-    date: "26.27 SEPTEMBER",
-    location: "HOTEL MARRIOTT INDORE",
-    call: "+91-9323727518",
-  },
-  {
-    img: green_jewellary,
-    title: "JEWELLERY WORLD",
-    date: "03.04.05 OCTOBER",
-    location: "TAJ KRISHNA HYDERABAD",
-    call: "+91-9323727518",
-  },
+const Eventshowcase = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
 
-  {
-    img: twinGirls,
-    title: "JEWELLERY WORLD",
-    date: "21.22.23 NOVEMBER",
-    location: "YMCA AHMEDABAD",
-    call: "+91-9323727518",
-  },
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.5], [0, 1, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.2], [0.8, 1]);
 
-  {
-    img: show6,
-    title: "JEWELLERY WORLD",
-    date: "14.15.16 NOVEMBER",
-    location: "ST.REGIS MUMBAI",
-    call: "+91-9323727518",
-  },
-];
-
-const PlaceItem = ({ data }) => {
-  const [showDetails, setShowDetails] = useState(false);
-
-  const toggleDetails = () => {
-    setShowDetails((prev) => !prev);
+  // Jewelry showcase event data
+  const eventDetails = {
+    title: "Elegance Unveiled",
+    subtitle: "Annual Jewelry Exhibition",
+    description:
+      "An exclusive showcase of our finest jewelry collections, featuring masterful craftsmanship and rare gemstones from around the world.",
+    date: "April 15-18, 2025",
+    location: "The Grand Atrium, Luxury Mall",
   };
 
+  const showcaseItems = [
+    {
+      image: show1,
+      name: "11th, 12th & 13th July",
+      description:
+        "YMCA AHMEDABAD",
+      highlight: "JEWELLERY WORLD",
+    },
+    {
+      image: show5, 
+      name: "25th, 26th & 27th July",
+      description:
+        "ST.REGIS MUMBAI",
+      highlight: "JEWELLERY WORLD",
+    },
+    {
+      image: show2,
+      name: "25th, 26th & 27th Augest",
+      description:
+        "THE ASHOK DELHI",
+      highlight: "JEWELLERY WORLD",
+    },
+    {
+      image: show3,
+      name: "26th, 27th September",
+      description:
+        "HOTEL MARRIOTT INDORE.",
+      highlight: "JEWELLERY WORLD",
+    },
+    {
+      image: show6,
+      name: "3rd, 4th & 5th October",
+      description:
+        "TAJ KRISHNA HYDERABAD",
+      highlight: "JEWELLERY WORLD",
+    },
+    {
+      image: hero1,
+      name: "21th, 22th & 23rd November",
+      description:
+        "YMCA AHMEDABAD",
+      highlight: "JEWELLERY WORLD",
+    },
+    // New items
+    {
+      image: show4, // Replace with a new image
+      name: "14th, 15th and 16th November",
+      description:
+        "ST.REGIS MUMBAI",
+      highlight: "JEWELLERY WORLD",
+    },
+   
+  ];
+
   return (
-    <motion.div
-      className="mt-4 w-full max-w-sm cursor-pointer group"
-      whileHover={{
-        scale: 1.03,
-        y: -5,
-      }}
-      transition={{ type: "spring", stiffness: 200, damping: 15 }}
-      onClick={toggleDetails} // handle mobile tap
+    <section
+      ref={containerRef}
+      className="py-24 bg-gradient-to-b from-stone-900 to-stone-800 text-white overflow-hidden"
     >
-      <div className="relative h-[450px] overflow-hidden shadow-xl border border-gray-100">
-        {/* Gold accent border */}
-        <div className="absolute inset-0 border-2 border-[#D4AF37] opacity-30 z-10 pointer-events-none"></div>
-
-        {/* Background pattern overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#3D0301]/90 via-[#3D0301]/30 to-transparent opacity-70 z-10"></div>
-
-        <img
-          src={data.img}
-          alt={data.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-
-        {/* Slide-up Details */}
-        <div
-          className={`absolute bottom-0 left-0 right-0 h-1/2 bg-white/95 backdrop-blur-sm text-[#3D0301] 
-            flex flex-col justify-start items-start p-6 
-            transform ${showDetails ? "translate-y-0" : "translate-y-full"} 
-            group-hover:translate-y-0 
-            transition-transform duration-500 ease-in-out 
-            shadow-[0_-15px_25px_-5px_rgba(0,0,0,0.1)] z-20
-            border-t-2 border-[#D4AF37]`}
-        >
-          <h3 className="text-xl font-bold uppercase mb-3 relative">
-            <span className="after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-12 after:h-0.5 after:bg-[#3D0301]">
-              {data.title}
-            </span>
-          </h3>
-
-          <p className="mb-4 text-sm text-[#3D0301]/80 font-light italic">
-            "Experience the epitome of elegance and innovation in our exclusive
-            showcase"
-          </p>
-
-          <ul className="text-left w-full space-y-3">
-            <li className="flex items-center text-[#3D0301]">
-              <MdLocationOn className="mr-3 text-[#D4AF37]" />
-              <span className="font-medium">{data.location}</span>
-            </li>
-            <li className="flex items-center text-[#3D0301]">
-              <MdDateRange className="mr-3 text-[#D4AF37]" />
-              <span className="font-medium">{data.date}</span>
-            </li>
-            <li className="flex items-center text-[#3D0301]">
-              <MdPhone className="mr-3 text-[#D4AF37]" />
-              <span className="font-medium">{data.call}</span>
-            </li>
-          </ul>
-        </div>
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-full">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-amber-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-40 right-20 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl"></div>
       </div>
 
-      <Link to="/register" className="w-full">
-        <motion.button
-          whileTap={{ scale: 0.95 }}
-          className="w-full bg-gradient-to-r from-[#3D0301] to-[#5D0501] text-white uppercase px-4 py-4 
-               text-center text-lg hover:from-[#5D0501] hover:to-[#3D0301] transition-all duration-300 
-               shadow-lg font-medium tracking-wide"
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        {/* Event header */}
+        <motion.div
+          className="mb-10 md:mb-12 relative"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
         >
-          Register Now
-        </motion.button>
-      </Link>
-    </motion.div>
-  );
-};
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end">
+            <div className="max-w-xl">
+              <motion.div
+                className="flex items-center mb-6"
+                // initial={{ x: -30, opacity: 0 }}
+                // animate={{ x: 0, opacity: 1 }}
+                // transition={{ duration: 0.7 }}
+              >
+                <div className="h-px w-12 bg-amber-400 mr-4"></div>
+                <span className="text-amber-400 uppercase tracking-widest text-sm font-medium">
+                  Event Showcase
+                </span>
+              </motion.div>
 
-const Upcomingevent = () => {
-  return (
-    <section className="py-14 md:py-24 bg-gradient-to-b from-white to-gray-50 text-zinc-900 relative overflow-hidden z-10">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-32 h-32 bg-[#3D0301]/5 rounded-full -translate-x-16 -translate-y-16"></div>
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#3D0301]/5 rounded-full translate-x-24 translate-y-24"></div>
+              <motion.h1
+                className="text-4xl md:text-6xl font-light mb-6 tracking-tight"
+                // initial={{ y: 30, opacity: 0 }}
+                // animate={{ y: 0, opacity: 1 }}
+                // transition={{ duration: 0.7, delay: 0.2 }}
+              >
+                {eventDetails.title}
+                {/* <span className="block text-2xl md:text-3xl text-stone-300 mt-2">{eventDetails.subtitle}</span> */}
+              </motion.h1>
 
-      <div className="max-w-7xl px-4 mx-auto relative">
-        <div className="grid grid-cols-12 justify-start mb-12">
-          <div className="col-span-12 lg:col-span-8 text-left">
-            <p className="text-[#D4AF37] font-medium uppercase tracking-widest mb-2">
-              Don't Miss Out
-            </p>
-            <h2 className="font-medium text-black font-heading leading-none text-3xl md:text-[55px] mb-2 relative inline-block pb-2">
-              <span className="border-b-4 border-[#D4AF37] pb-2">Upcoming</span>{" "}
-              Events
-            </h2>
+              {/* <motion.p
+                className="text-stone-300 text-lg mb-8 max-w-lg"
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+              >
+                {eventDetails.description}
+              </motion.p> */}
+            </div>
 
-            <p className="text-gray-600 mt-6 max-w-7xl text-lg">
-              Discover our curated selection of prestigious events showcasing
-              the finest in luxury goods and services.
-            </p>
+            {/* <motion.div 
+              className="mt-8 md:mt-0 bg-stone-800/50 backdrop-blur-sm p-6 border border-stone-700 rounded-lg"
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
+              <div className="flex items-center mb-4">
+                <svg className="w-5 h-5 text-amber-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd"></path>
+                </svg>
+                <span className="text-stone-200 font-medium">{eventDetails.date}</span>
+              </div>
+              <div className="flex items-center">
+                <svg className="w-5 h-5 text-amber-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path>
+                </svg>
+                <span className="text-stone-200">{eventDetails.location}</span>
+              </div>
+            </motion.div> */}
           </div>
-        </div>
 
-        <div className="relative">
-          <Swiper
-            modules={[Pagination, Autoplay, A11y, EffectCoverflow]}
-            spaceBetween={30}
-            slidesPerView={1}
-            loop={true}
-            autoplay={{
-              delay: 3500,
-              disableOnInteraction: false,
-            }}
-            speed={800}
-            pagination={{
-              clickable: true,
-              el: ".custom-pagination",
+          {/* Decorative line */}
+          <motion.div
+            className="w-full h-px bg-gradient-to-r from-transparent via-stone-600 to-transparent mt-12 md:mt-20"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          />
+        </motion.div>
 
-              bulletClass: "swiper-pagination-bullet custom-bullet",
-              bulletActiveClass:
-                "swiper-pagination-bullet-active custom-bullet-active",
-            }}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-                effect: "coverflow",
-                coverflowEffect: {
-                  rotate: 10,
-                  stretch: 0,
-                  depth: 100,
-                  modifier: 1,
-                  slideShadows: true,
-                },
-              },
-            }}
+        {/* Featured collection */}
+        <motion.div style={{ opacity, scale }} className="mb-10 md:mb-14">
+          {/* <h2 className="text-3xl font-light mb-12 tracking-tight">Featured Collections</h2> */}
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            {/* Large featured item */}
+            <motion.div
+              className="md:col-span-8 relative overflow-hidden rounded-lg aspect-[5/4] group cursor-pointer"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7 }}
+              whileHover={{ scale: 0.99 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 z-10"></div>
+              <img
+                src={showcaseItems[0].image}
+                alt={showcaseItems[0].name}
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 z-20 flex flex-col justify-end p-8">
+                <div className="flex items-center mb-4">
+                  <div className="h-px w-8 bg-amber-400 mr-3"></div>
+                  <span className="text-amber-400 uppercase tracking-wider text-xs font-medium">
+                    {showcaseItems[0].highlight}
+                  </span>
+                </div>
+                <h3 className="text-4xl font-medium mb-2">
+                  {showcaseItems[0].name}
+                </h3>
+                <p className="text-stone-300 max-w-lg">
+                  {showcaseItems[0].description}
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Smaller items */}
+            <div className="md:col-span-4 grid grid-cols-1 gap-6">
+              {showcaseItems.slice(1, 3).map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="relative overflow-hidden rounded-lg aspect-[4/3] group cursor-pointer"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.7, delay: 0.2 * (index + 1) }}
+                  whileHover={{ scale: 0.98 }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 z-10"></div>
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 z-20 flex flex-col justify-end p-6">
+                    <div className="flex items-center mb-2">
+                      <div className="h-px w-6 bg-amber-400 mr-2"></div>
+                      <span className="text-amber-400 uppercase tracking-wider text-xs font-medium">
+                        {item.highlight}
+                      </span>
+                    </div>
+                    <h3 className="text-3xl font-medium">{item.name}</h3>
+                    <p className="text-stone-300 max-w-lg">
+                  {item.description}
+                </p>
+
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Bottom row */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {showcaseItems.slice(3, 7).map(
+            (
+              item,
+              index 
+            ) => (
+              <motion.div
+                key={index}
+                className="relative overflow-hidden rounded-lg aspect-[16/9] group cursor-pointer"
+                whileHover={{ scale: 0.98 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 z-10"></div>
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 z-20 flex flex-col justify-end p-6">
+                  <div className="flex items-center mb-2">
+                    <div className="h-px w-6 bg-amber-400 mr-2"></div>
+                    <span className="text-amber-400 uppercase tracking-wider text-xs font-medium">
+                      {item.highlight}
+                    </span>
+                  </div>
+                  <h3 className="text-4xl font-medium mb-2">{item.name}</h3>
+                  <p className="text-stone-300 max-w-lg">{item.description}</p>
+                </div>
+              </motion.div>
+            )
+          )}
+        </motion.div>
+
+        {/* Call to action
+        <motion.div
+          className="mt-16 md:mt-24 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          <a
+            href="#gallery"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full text-stone-900 font-medium hover:from-amber-400 hover:to-amber-500 transition-all duration-300 group"
           >
-            {placeData.map((data, i) => (
-              <SwiperSlide key={i}>
-                <PlaceItem data={data} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          <div className="custom-pagination mt-10 flex justify-center gap-2" />
-
-          {/* Add inline styles for the pagination bullets */}
-          <style jsx>{`
-            .custom-bullet {
-              background-color: rgba(61, 3, 1, 0.5);
-              width: 12px;
-              height: 12px;
-              display: inline-block;
-              border-radius: 50%;
-              margin: 0 4px;
-              transition: all 0.3s ease;
-            }
-            .custom-bullet-active {
-              background-color: rgb(61, 3, 1);
-              width: 16px;
-              height: 16px;
-            }
-          `}</style>
-        </div>
+            <span>View Complete Exhibition Gallery</span>
+            <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">
+              →
+            </span>
+          </a>
+        </motion.div> */}
       </div>
     </section>
   );
 };
 
-export default Upcomingevent;
+export default Eventshowcase;
