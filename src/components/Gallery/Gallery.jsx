@@ -1,223 +1,125 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-// Import your images here
-// For example:
-// import image1 from '../../assets/image1.jpg';
-// import image2 from '../../assets/image2.jpg';
-// etc.
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import show4 from '../../assets/show4.jpg';
-import hero5 from '../../assets/hero5.jpg';
-import hero2 from '../../assets/hero2.jpg';
-import hero3 from '../../assets/hero3.jpg';
-import hero1 from '../../assets/hero1.jpg';
-import hero4 from '../../assets/hero4.jpg';
-import show1 from '../../assets/show1.jpg';
-import show2 from '../../assets/show2.jpg';
-import show3 from '../../assets/show3.jpg';
-import show5 from '../../assets/show5.jpg';
-import show6 from '../../assets/show6.jpg';
+
+// Import your gallery images
+import g1 from '../../assets/gallery/g1.jpg';
+import g2 from '../../assets/gallery/g2.jpg';
+import g3 from '../../assets/gallery/g3.jpg';
+import g4 from '../../assets/gallery/g4.jpg';
+import g5 from '../../assets/gallery/g5.jpg';
+import g6 from '../../assets/gallery/g6.jpg';
+import g7 from '../../assets/gallery/g7.jpg';
+import g8 from '../../assets/gallery/g8.jpg';
+import g9 from '../../assets/gallery/g9.jpg';
+import g10 from '../../assets/gallery/g10.jpg';
+import g11 from '../../assets/gallery/g11.jpg';
+import g12 from '../../assets/gallery/g12.jpg';
+import g13 from '../../assets/gallery/g13.jpg';
+import g14 from '../../assets/gallery/g14.jpg';
+import g15 from '../../assets/gallery/g15.jpg';
+import g16 from '../../assets/gallery/g16.jpg';
+import g17 from '../../assets/gallery/g17.jpg';
+import g18 from '../../assets/gallery/g18.jpg';
+import g19 from '../../assets/gallery/g19.jpg';
+import g20 from '../../assets/gallery/g20.jpg';
+import g21 from '../../assets/gallery/g21.jpg';
+import g22 from '../../assets/gallery/g22.jpg';
+import g23 from '../../assets/gallery/g23.jpg';
+import g24 from '../../assets/gallery/g24.jpg';
+import g25 from '../../assets/gallery/g25.jpg';
+import g26 from '../../assets/gallery/g26.jpg';
+import g27 from '../../assets/gallery/g27.jpg';
+import g28 from '../../assets/gallery/g28.jpg';
+import g29 from '../../assets/gallery/g29.jpg';
+import g30 from '../../assets/gallery/g30.jpg';
+import g31 from '../../assets/gallery/g31.jpg';
+import g32 from '../../assets/gallery/g32.jpg';
+import g33 from '../../assets/gallery/g33.jpg';
+import g34 from '../../assets/gallery/g34.jpg';
+import g35 from '../../assets/gallery/g35.jpg';
+import g36 from '../../assets/gallery/g36.jpg';
+import g37 from '../../assets/gallery/g37.jpg';
+import g38 from '../../assets/gallery/g38.jpg';
+import g39 from '../../assets/gallery/g39.jpg';
+import g40 from '../../assets/gallery/g40.jpg';
+import g41 from '../../assets/gallery/g41.jpg';
+import g42 from '../../assets/gallery/g42.jpg';
+import g43 from '../../assets/gallery/g43.jpg';
+
+
+// ... keep all your other imports
 
 export default function EventShowcase() {
-  // Available months and years
-  const timelineData = [
-    { id: 1, month: "January", year: "2024" },
-    { id: 2, month: "March", year: "2024" },
-    { id: 3, month: "May", year: "2024" },
-    { id: 4, month: "August", year: "2024" },
-    { id: 5, month: "October", year: "2024" },
-    // { id: 6, month: "December", year: "2024" },
-    // { id: 7, month: "February", year: "2025" },
-    // { id: 8, month: "April", year: "2025" }
-  ];
-
   // State
-  const [selectedTime, setSelectedTime] = useState(timelineData[0].id);
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [loadedImages, setLoadedImages] = useState({});
   
-  // REPLACE THIS SECTION: Create an object with your actual images for each event
-  // This is an example - replace with your actual image paths
-  const eventImages = {
-    1: [
-      show4,
-      show1,
-      show2,
-      show3,
-      show5,
-      show6,
-      hero5,  
-      hero2,
-      hero3,
-      hero1,
-      hero4,
-      
-      // Add more images as needed
-    ],
-    2: [
-      show6,
-      hero5,  
-      hero2,
-      hero3,
-      hero1,
-      hero4,
-      show4,
-      show1,
-      show2,
-      show3,
-      show5,
-      // Add more images as needed
-    ],
-    3: [
-      show4,
-      show1,
-      show2,
-      show3,
-      show5,
-      show6,
-      hero5,  
-      hero2,
-      hero3,
-      hero1,
-      hero4,
-      
-      // Add more images as needed
-    ],
-    4: [
-      show6,
-      hero5,  
-      hero2,
-      hero3,
-      hero1,
-      hero4,
-      show4,
-      show1,
-      show2,
-      show3,
-      show5,
-      // Add more images as needed
-    ],
-    5: [
-      show6,
-      hero5,  
-      hero2,
-      hero3,
-      hero1,
-      hero4,
-      show4,
-      show1,
-      show2,
-      show3,
-      show5,
-      // Add more images as needed
-    ],
-    1: [
-      show4,
-      show1,
-      show2,
-      show3,
-      show5,
-      show6,
-      hero5,  
-      hero2,
-      hero3,
-      hero1,
-      hero4,
-      
-      // Add more images as needed
-    ],
-    // Continue for all events (3-8)
-    // This is just an example structure
+  // Generate images for the gallery
+  const galleryImages = [
+    g1, g2, g3, g4, g5, g6, g7, g8, g9, g10,
+    g11, g12, g13, g14, g15, g16, g17, g18, g19, g20,
+    g21, g22, g23, g24, g25, g26, g27, g28, g29, g30,
+    g31, g32, g33, g34, g35, g36, g37, g38, g39, g40,
+    g41, g42, g43, g14, g15, g16, g17, g18, g19, g20,
+  ].map((src, index) => ({
+    id: index + 1,
+    src,
+    alt: `Wedding Asia Productions - Image ${index + 1}`
+  }));
+
+  // Simulate loading state
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Track which images have loaded
+  const handleImageLoad = (imageId) => {
+    setLoadedImages(prev => ({
+      ...prev,
+      [imageId]: true
+    }));
   };
 
-  // Generate images for each event with your actual images
-  const generateImages = (eventId) => {
-    // You can adjust this number to the total number of images you want
-    const totalImages = 10;
-    const images = [];
+  // Navigate between images in fullscreen view
+  const navigateFullscreen = (direction) => {
+    if (!selectedImage) return;
     
-    // If you have actual images mapped to this eventId, use them first
-    const actualImages = eventImages[eventId] || [];
+    const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
+    let newIndex;
     
-    for (let i = 1; i <= totalImages; i++) {
-      if (i <= actualImages.length) {
-        // Use actual images if available
-        images.push({
-          id: i,
-          src: actualImages[i-1],
-          alt: `Wedding Asia Productions - Event ${eventId}, Image ${i}`
-        });
-      } else {
-        // Fallback to placeholder if you don't have enough images
-        images.push({
-          id: i,
-          src: `/api/placeholder/${600 + (i % 3) * 10}/${800 + (i % 5) * 10}`,
-          alt: `Wedding Asia Productions - Event ${eventId}, Image ${i}`
-        });
+    if (direction === 'next') {
+      newIndex = (currentIndex + 1) % galleryImages.length;
+    } else {
+      newIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    }
+    
+    setSelectedImage(galleryImages[newIndex]);
+  };
+
+  // Close fullscreen view on ESC key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setSelectedImage(null);
+      } else if (e.key === 'ArrowRight') {
+        navigateFullscreen('next');
+      } else if (e.key === 'ArrowLeft') {
+        navigateFullscreen('prev');
       }
-    }
-    return images;
-  };
+    };
 
-  // Content for each event
-  const eventContent = {
-    1: {
-      title: "Elegance Unveiled",
-      subtitle: "Annual Bridal Collection",
-      description: "An exclusive showcase of our finest bridal collections, featuring masterful craftsmanship and exquisite designs from renowned couturiers.",
-      images: generateImages(1)
-    },
-    2: {
-      title: "Royal Splendor",
-      subtitle: "Heritage Exhibition",
-      description: "Celebrating the majestic traditions of royal weddings, showcasing opulent designs and ceremonial grandeur from across cultures.",
-      images: generateImages(2)
-    },
-    3: {
-      title: "Floral Symphony",
-      subtitle: "Spring Celebration",
-      description: "A breathtaking arrangement of floral magnificence, where nature's beauty enhances the bridal experience through artistic expression.",
-      images: generateImages(3)
-    },
-    4: {
-      title: "Summer Soiree",
-      subtitle: "Destination Weddings",
-      description: "Capturing the essence of luxury destination weddings, where pristine locations provide the perfect backdrop for unforgettable celebrations.",
-      images: generateImages(4)
-    },
-    5: {
-      title: "Autumn Allure",
-      subtitle: "Fashion Gala",
-      description: "A sophisticated showcase of seasonal collections where warm hues and rich textures create an atmosphere of romantic elegance.",
-      images: generateImages(5)
-    },
-    6: {
-      title: "Winter Wonderland",
-      subtitle: "Holiday Collections",
-      description: "Enchanting winter weddings brought to life through crystalline details, luxurious fabrics, and the magical ambiance of the festive season.",
-      images: generateImages(6)
-    },
-    7: {
-      title: "Modern Marvels",
-      subtitle: "Contemporary Designs",
-      description: "Pushing the boundaries of traditional bridal aesthetics with innovative designs that blend timeless elegance with modern sensibilities.",
-      images: generateImages(7)
-    },
-    8: {
-      title: "Ethereal Dreams",
-      subtitle: "Spring Collection",
-      description: "A celebration of ethereal beauty and romantic whimsy, featuring delicate fabrics and intricate details that create dreamlike wedding moments.",
-      images: generateImages(8)
-    }
-  };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImage]);
 
-  // Scroll handling for timeline
-  const scroll = (direction) => {
-    const scrollAmount = direction === 'left' ? -200 : 200;
-    setScrollPosition(prev => Math.max(0, prev + scrollAmount));
-  };
-
-  // Define some animation variants for the gallery images
+  // Animation variants
   const galleryImageVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: (i) => ({
@@ -404,124 +306,185 @@ export default function EventShowcase() {
             >
               <div className="absolute -left-3 top-6 w-6 h-6 bg-yellow-500 rounded-full"></div>
               <h3 className="text-2xl font-bold text-gray-800 mb-1">
-                {eventContent[selectedTime].title}
+                Elegance Unveiled
               </h3>
               <p className="text-lg text-yellow-500 font-semibold mb-4">
-                {eventContent[selectedTime].subtitle}
+                Annual Bridal Collection
               </p>
               <p className="text-gray-600">
-                {eventContent[selectedTime].description}
+                An exclusive showcase of our finest bridal collections, featuring masterful craftsmanship and exquisite designs from renowned couturiers.
               </p>
             </motion.div>
           </div>
         </div>
 
-        {/* Timeline navigation */}
+        {/* Gallery heading */}
         <div className="relative mb-12">
           <div className="flex items-center justify-between mb-2">
-            <h3 className="text-xl font-semibold text-gray-700">Browse Events</h3>
-            <div className="flex space-x-2">
-              <button
-                onClick={() => scroll('left')}
-                className="p-2 rounded-full bg-white shadow hover:bg-gray-50"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              <button
-                onClick={() => scroll('right')}
-                className="p-2 rounded-full bg-white shadow hover:bg-gray-50"
-              >
-                <ChevronRight size={20} />
-              </button>
-            </div>
+            <h3 className="text-xl font-semibold text-gray-700">Gallery Showcase</h3>
           </div>
-
-          <div className="overflow-hidden">
-            <div
-              className="flex space-x-4 py-4 transition-transform duration-300 ease-in-out"
-              style={{ transform: `translateX(-${scrollPosition}px)` }}
-            >
-              {timelineData.map(time => (
-                <motion.button
-                  key={time.id}
-                  onClick={() => setSelectedTime(time.id)}
-                  className={`px-6 py-3 relative rounded-lg bg-white shadow-md flex-shrink-0 transition-all duration-300 ${
-                    selectedTime === time.id ? 'ring-2 ring-yellow-500' : 'hover:bg-gray-50'
-                  }`}
-                  whileHover={{ y: -4 }}
-                >
-                  <div className="text-sm font-medium text-gray-900">{time.month}</div>
-                  <div className="text-xs text-gray-500">{time.year}</div>
-                  {selectedTime === time.id && (
-                    <motion.div
-                      className="absolute bottom-0 left-0 h-1 bg-yellow-500 w-full"
-                      layoutId="timelineHighlight"
-                    />
-                  )}
-                </motion.button>
-              ))}
-            </div>
-          </div>
+          <div className="h-px w-full bg-gray-200 mb-8"></div>
         </div>
 
-        {/* Enhanced Gallery grid with more framer-motion animations */}
-        <motion.div
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          key={selectedTime}
-        >
-          {eventContent[selectedTime].images.map((image, index) => (
-            <motion.div
-              key={image.id}
-              className="aspect-w-3 aspect-h-4 overflow-hidden rounded-lg shadow-md bg-white p-1"
-              custom={index}
-              initial="hidden"
-              animate="visible"
-              whileHover="hover"
-              whileTap="tap"
-              variants={galleryImageVariants}
-            >
-              <motion.img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover"
-                initial={{ scale: 1.2 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.5 }}
-                whileHover={{ 
-                  scale: 1.1,
-                  transition: { duration: 0.3 }
+        {/* Gallery grid with skeleton loading */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {loading ? (
+            // Skeleton loaders
+            [...Array(20)].map((_, i) => (
+              <motion.div
+                key={`skeleton-${i}`}
+                className="aspect-w-3 aspect-h-4 overflow-hidden rounded-lg bg-gray-200"
+                initial={{ opacity: 0.3 }}
+                animate={{ 
+                  opacity: [0.3, 0.6, 0.3],
+                  transition: { 
+                    duration: 1.5, 
+                    repeat: Infinity,
+                    ease: "easeInOut" 
+                  }
                 }}
-              />
-              
-              {/* Optional overlay with zoom effect on hover */}
-              <motion.div 
-                className="absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center"
-                initial={{ opacity: 0 }}
-                // whileHover={{ 
-                //   opacity: 1,
-                //   backgroundColor: 'rgba(0,0,0,0.3)'
-                // }}
               >
-                <motion.div
-                  className="text-white text-opacity-0"
-                  whileHover={{ opacity: 1 }}
-                >
+                <div className="w-full h-full"></div>
+              </motion.div>
+            ))
+          ) : (
+            // Actual gallery images
+            galleryImages.map((image, index) => (
+              <motion.div
+                key={image.id}
+                className="aspect-w-3 aspect-h-4 overflow-hidden rounded-lg shadow-md bg-white p-1 cursor-pointer"
+                custom={index}
+                initial="hidden"
+                animate="visible"
+                whileHover="hover"
+                whileTap="tap"
+                variants={galleryImageVariants}
+                onClick={() => setSelectedImage(image)}
+              >
+                {/* Skeleton before image loads */}
+                {!loadedImages[image.id] && (
                   <motion.div 
-                    className="w-12 h-12 rounded-full bg-yellow-500 bg-opacity-80 flex items-center justify-center"
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1 }}
+                    className="absolute inset-0 bg-gray-200"
+                    animate={{ 
+                      opacity: [0.3, 0.6, 0.3],
+                      transition: { 
+                        duration: 1.5, 
+                        repeat: Infinity,
+                        ease: "easeInOut" 
+                      }
+                    }}
+                  />
+                )}
+                
+                <motion.img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                  initial={{ scale: 1.2, opacity: 0 }}
+                  animate={{ 
+                    scale: 1, 
+                    opacity: loadedImages[image.id] ? 1 : 0 
+                  }}
+                  transition={{ duration: 0.5 }}
+                  onLoad={() => handleImageLoad(image.id)}
+                  style={{ visibility: loadedImages[image.id] ? 'visible' : 'hidden' }}
+                />
+                
+                {/* Zoom indicator overlay */}
+                <motion.div 
+                  className="absolute inset-0  bg-opacity-0 flex items-center justify-center"
+                  whileHover={{ 
+                    opacity: 1,
+                    backgroundColor: 'rgba(0,0,0,0.3)'
+                  }}
+                >
+                  <motion.div
+                    className="text-white"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
                   >
-                    {/* You can add an icon here if you want */}
-                    <span className="text-lg">+</span>
+                    <motion.div 
+                      className="w-12 h-12 rounded-full bg-yellow-500 bg-opacity-80 flex items-center justify-center"
+                      initial={{ scale: 0 }}
+                      whileHover={{ scale: 1 }}
+                    >
+                      <span className="text-lg">+</span>
+                    </motion.div>
                   </motion.div>
                 </motion.div>
               </motion.div>
+            ))
+          )}
+        </div>
+
+        {/* Fullscreen image view */}
+        <AnimatePresence>
+          {selectedImage && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center"
+              onClick={() => setSelectedImage(null)}
+            >
+              <motion.div 
+                className="relative max-w-5xl max-h-[90vh] w-full h-full flex items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <motion.img
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  className="max-w-full max-h-full object-contain"
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.9, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                />
+                
+                {/* Close button */}
+                <motion.button
+                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black bg-opacity-50 flex items-center justify-center text-white"
+                  onClick={() => setSelectedImage(null)}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <X size={24} />
+                </motion.button>
+                
+                {/* Navigation buttons */}
+                <motion.button
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full bg-black bg-opacity-50 flex items-center justify-center text-white"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigateFullscreen('prev');
+                  }}
+                  whileHover={{ scale: 1.1, backgroundColor: 'rgba(0,0,0,0.7)' }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <ChevronLeft size={28} />
+                </motion.button>
+                
+                <motion.button
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full bg-black bg-opacity-50 flex items-center justify-center text-white"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigateFullscreen('next');
+                  }}
+                  whileHover={{ scale: 1.1, backgroundColor: 'rgba(0,0,0,0.7)' }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <ChevronRight size={28} />
+                </motion.button>
+                
+                {/* Image counter */}
+                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 px-4 py-2 rounded-full text-white text-sm">
+                  {galleryImages.findIndex(img => img.id === selectedImage.id) + 1} / {galleryImages.length}
+                </div>
+              </motion.div>
             </motion.div>
-          ))}
-        </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Decorative line */}
         <div className="mt-16 relative">

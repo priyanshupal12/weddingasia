@@ -29,8 +29,7 @@ const Navbar = () => {
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/">Home</Link></li>
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/aboutus">About Us</Link></li>
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/gallery">Gallery</Link></li>
-          {/* <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/onlinestore">Online Store</Link></li> */}
-          <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/journal">Journal</Link></li>
+          <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/podcast">Podcast</Link></li>
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/register">Contact us</Link></li>
         </ul>
 

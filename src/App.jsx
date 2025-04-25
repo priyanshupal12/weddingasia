@@ -24,7 +24,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/gallery/:id" element={<GalleryDetails />} />
         </Route>
-        <Route path="/journal" element={<JournalPage />} />
+        {/* <Route path="/podcast" element={<JournalPage />} /> */}
         <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
