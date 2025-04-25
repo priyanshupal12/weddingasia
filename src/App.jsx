@@ -6,10 +6,10 @@ import AboutUs from './components/AboutUs/AboutUs.jsx'
 import Home from './components/Home/Home.jsx'
 import Scrolltop from './components/Scrolltop.jsx'
 import { Routes, Route } from 'react-router-dom';
-
 import Gallery from './components/Gallery/Gallery.jsx'
 import Register from './components/Register/Register.jsx'
 import JournalPage from './components/Journal/JournalPage.jsx'
+import JournalDetails from './components/Journal/JournalDetails.jsx'
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
     <Route path="/gallery" element={<Gallery />} />
     <Route path="/journal" element={<JournalPage />} />
     <Route path="/register" element={<Register />} />
+    <Route path="/journal-detail" element={<JournalDetails />} />
     </Routes>
     <Footer />
     </React.Fragment>
