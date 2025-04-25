@@ -13,6 +13,7 @@ import earring from '../../assets/earrings.jpg';
 import successStoryImage from '../../assets/vikram-img.avif';
 
 export default function AboutUs() {
+
   const [isVisible, setIsVisible] = useState(false);
   const [typedText, setTypedText] = useState('');
   const fullText = 'Jewellery World Exhibition';
@@ -445,7 +446,7 @@ export default function AboutUs() {
             </motion.div>
           </div>
 
-         
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
             {[
               { stat: "5+", label: "Cities Touched" },
@@ -467,7 +468,7 @@ export default function AboutUs() {
             ))}
           </div>
 
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -483,7 +484,150 @@ export default function AboutUs() {
               We create celebrated destinations for jewellery lovers, brides-to-be, and India's finest jewellers to connect, celebrate, and shine.
             </p>
           </motion.div>
-        </div>  */}
+        </div> */}
+
+        {/* Success Story Section */}
+        {/* Success Story Section */}
+        <div className="mb-16 md:mb-32 w-full overflow-hidden">
+          <div className="text-start mb-8 md:mb-16">
+            <motion.h2
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={headingVariants}
+              className="text-2xl sm:text-3xl md:text-4xl font-light text-stone-800 mb-4"
+            >
+              Jewellery World Exhibitions – India's Sparkling Success Story
+            </motion.h2>
+            <motion.div
+              style={{ transformOrigin: "left" }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              variants={barVariants}
+              className="h-1 bg-amber-700 mb-6 md:mb-8 block w-full md:w-3/4 lg:w-1/2"
+            />
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="text-base md:text-lg text-stone-600 leading-relaxed mb-8 md:mb-12"
+            >
+              A Journey of Glamour, Growth & Grandeur
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center mb-12 md:mb-16">
+            <div className="space-y-6 md:space-y-8">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-stone-600 leading-relaxed"
+              >
+                Over the years, Jewellery World Exhibitions has grown into one of India's most trusted platforms for bridal and fine jewellery showcases. Here's a powerful look at the numbers that speak louder than words:
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="bg-white p-4 md:p-6 shadow-sm"
+              >
+                <h3 className="text-lg md:text-xl font-medium text-amber-800 mb-3 md:mb-4">Performance Snapshot</h3>
+                <div className="overflow-x-auto w-full">
+                  <table className="min-w-full divide-y divide-amber-200 text-xs sm:text-sm">
+                    <thead>
+                      <tr>
+                        <th className="py-2 md:py-3 px-2 md:px-4 text-left font-medium text-amber-700 tracking-wider border-b border-amber-200 whitespace-nowrap">Year</th>
+                        <th className="py-2 md:py-3 px-2 md:px-4 text-left font-medium text-amber-700 tracking-wider border-b border-amber-200 whitespace-nowrap">Cities</th>
+                        <th className="py-2 md:py-3 px-2 md:px-4 text-left font-medium text-amber-700 tracking-wider border-b border-amber-200 whitespace-nowrap">Exhibitions</th>
+                        <th className="py-2 md:py-3 px-2 md:px-4 text-left font-medium text-amber-700 tracking-wider border-b border-amber-200 whitespace-nowrap">Exhibitors</th>
+                        <th className="py-2 md:py-3 px-2 md:px-4 text-left font-medium text-amber-700 tracking-wider border-b border-amber-200 whitespace-nowrap">Visitors</th>
+                        <th className="py-2 md:py-3 px-2 md:px-4 text-left font-medium text-amber-700 tracking-wider border-b border-amber-200 whitespace-nowrap">Highlights</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-amber-100">
+                      {exhibitionData.map((item, index) => (
+                        <tr key={index} className={index % 2 === 0 ? 'bg-amber-50' : 'bg-white'}>
+                          <td className="py-2 md:py-3 px-2 md:px-4 text-stone-800 whitespace-nowrap">{item.year}</td>
+                          <td className="py-2 md:py-3 px-2 md:px-4 text-stone-600 whitespace-nowrap">{item.cities}</td>
+                          <td className="py-2 md:py-3 px-2 md:px-4 text-stone-600 whitespace-nowrap">{item.total}</td>
+                          <td className="py-2 md:py-3 px-2 md:px-4 text-stone-600 whitespace-nowrap">{item.exhibitors}</td>
+                          <td className="py-2 md:py-3 px-2 md:px-4 text-stone-600 whitespace-nowrap">{item.visitors}</td>
+                          <td className="py-2 md:py-3 px-2 md:px-4 text-stone-600">{item.highlights}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="relative overflow-hidden mt-6 md:mt-0"
+            >
+              <div className="aspect-square w-full max-w-lg mx-auto">
+                <img
+                  src={successStoryImage}
+                  alt="Jewellery World Exhibition Success"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="absolute bottom-0 left-0 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 border-l-2 border-b-2 border-amber-400"
+              ></motion.div>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16">
+            {[
+              { stat: "5+", label: "Cities Touched" },
+              { stat: "18+", label: "Exhibitions Hosted" },
+              { stat: "600+", label: "Leading Jewellers Showcased" },
+              { stat: "60,000+", label: "Jewellery Lovers Engaged" }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.15, duration: 0.6 }}
+                className="bg-amber-50 p-4 sm:p-6 md:p-8 text-center border-b-4 border-amber-700"
+              >
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-amber-800 mb-2">{item.stat}</h3>
+                <p className="text-stone-600 text-xs sm:text-sm">{item.label}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="bg-stone-100 p-6 md:p-10 text-center"
+          >
+            <h3 className="text-xl md:text-2xl font-light text-stone-800 mb-4 md:mb-6">What's Next?</h3>
+            <p className="text-base md:text-lg text-amber-800 mb-4 md:mb-6">With new cities, bigger venues, and exclusive bridal experiences on the horizon – 2025 is all set to be even grander.</p>
+            <div className="mx-auto w-16 md:w-24 h-px bg-amber-700 mb-4 md:mb-6"></div>
+            <p className="text-lg md:text-xl text-stone-700 font-light italic">
+              We don't just host exhibitions.<br className="hidden sm:block" />
+              We create celebrated destinations for jewellery lovers, brides-to-be, and India's finest jewellers to connect, celebrate, and shine.
+            </p>
+          </motion.div>
+        </div>
 
         {/* Materials Section - Maintained from Previous Design */}
         <div className="py-20 bg-stone-100 rounded-lg mb-32">

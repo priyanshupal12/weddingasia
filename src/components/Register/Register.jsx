@@ -48,57 +48,57 @@ const Register = () => {
   };
 
   // List of upcoming locations in Indian cities
-  const upcomingLocations = [
-    {
-      city: "YMCA AHMEDABAD",
-      address: "Luxury Galleria, Bandra West",
-      date: "11.12.13 JULY, 2025",
-      details: "Exclusive pop-up showcase featuring our premium collection",
-      color: "amber-700"
-    },
-    {
-      city: "THE ASHOK DELHI",
-      address: "Imperial Arcade, Connaught Place",
-      date: "29.30 AUG, 2025",
-      details: "Grand opening of our flagship store",
-      color: "amber-700"
-    },
-    {
-      city: "TAJ KRISHNA HYDERABAD",
-      address: "The Promenade, Indiranagar",
-      date: "03.04.05 OCT, 2025",
-      details: "Special exhibition with limited edition pieces",
-      color: "amber-700"
-    },
-    {
-      city: "ST. REGIS MUMBAI",
-      address: "Heritage Emporium, Civil Lines",
-      date: "25.26.27 JULY, 2025",
-      details: "Traditional craftsmanship showcase",
-      color: "amber-700"
-    },
-    {
-      city: "HOTEL MARRIOTT INDORE",
-      address: "Oceanside Mall, ECR Road",
-      date: "26.27 SEPT, 2025",
-      details: "New year collection launch",
-      color: "amber-700"
-    },
-    {
-      city: "ST. REGIS MUMBAI",
-      address: "Victorian Gallery, Park Street",
-      date: "14.15.16 NOV, 2025",
-      details: "Spring collection preview",
-      color: "amber-700"
-    },
-    {
-      city: "YMCA AHMEDABAD",
-      address: "Luxury Galleria, Bandra West",
-      date: "21.22.23 NOV, 2025",
-      details: "Exclusive pop-up showcase featuring our premium collection",
-      color: "amber-700"
-    }
-  ];
+  // const upcomingLocations = [
+  //   {
+  //     city: "YMCA AHMEDABAD",
+  //     address: "Luxury Galleria, Bandra West",
+  //     date: "11.12.13 JULY, 2025",
+  //     details: "Exclusive pop-up showcase featuring our premium collection",
+  //     color: "amber-700"
+  //   },
+  //   {
+  //     city: "THE ASHOK DELHI",
+  //     address: "Imperial Arcade, Connaught Place",
+  //     date: "29.30 AUG, 2025",
+  //     details: "Grand opening of our flagship store",
+  //     color: "amber-700"
+  //   },
+  //   {
+  //     city: "TAJ KRISHNA HYDERABAD",
+  //     address: "The Promenade, Indiranagar",
+  //     date: "03.04.05 OCT, 2025",
+  //     details: "Special exhibition with limited edition pieces",
+  //     color: "amber-700"
+  //   },
+  //   {
+  //     city: "ST. REGIS MUMBAI",
+  //     address: "Heritage Emporium, Civil Lines",
+  //     date: "25.26.27 JULY, 2025",
+  //     details: "Traditional craftsmanship showcase",
+  //     color: "amber-700"
+  //   },
+  //   {
+  //     city: "HOTEL MARRIOTT INDORE",
+  //     address: "Oceanside Mall, ECR Road",
+  //     date: "26.27 SEPT, 2025",
+  //     details: "New year collection launch",
+  //     color: "amber-700"
+  //   },
+  //   {
+  //     city: "ST. REGIS MUMBAI",
+  //     address: "Victorian Gallery, Park Street",
+  //     date: "14.15.16 NOV, 2025",
+  //     details: "Spring collection preview",
+  //     color: "amber-700"
+  //   },
+  //   {
+  //     city: "YMCA AHMEDABAD",
+  //     address: "Luxury Galleria, Bandra West",
+  //     date: "21.22.23 NOV, 2025",
+  //     details: "Exclusive pop-up showcase featuring our premium collection",
+  //     color: "amber-700"
+  //   }
+  // ];
   
   // Contact information
   const contactInfo = [
@@ -284,7 +284,7 @@ const Register = () => {
       </div>
 
       {/* Upcoming Locations Section */}
-      <div className="bg-gradient-to-b from-stone-50 to-stone-100 py-20 md:py-28">
+      {/* <div className="bg-gradient-to-b from-stone-50 to-stone-100 py-20 md:py-28">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="uppercase text-amber-700 tracking-widest text-sm font-medium mb-2 inline-block">Experience Luxury</span>
@@ -339,7 +339,7 @@ const Register = () => {
             </button>
           </div>
         </div>
-      </div>      
+      </div>       */}
       
     </div>
   );

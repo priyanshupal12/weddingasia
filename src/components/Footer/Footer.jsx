@@ -91,7 +91,7 @@ const Footer = () => {
                                 <a href="https://www.instagram.com/jewelleryworld_exhibitions/" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
                                     <BsInstagram />
                                 </a>
-                                <a href="facebook.com/JewelleryWorldExhibitions" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
+                                <a href="https://www.facebook.com/JewelleryWorldExhibitions" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
                                     <FaMeta />
                                 </a>
                                 <a href="https://x.com/JWExbihitions" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
@@ -103,7 +103,7 @@ const Footer = () => {
                                 <a href="https://in.pinterest.com/jewelleryworldexhibitions/" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
                                     <FaPinterestP />
                                 </a>
-                                <a href="https://www.youtube.com/@JewelleryWorldExhibitions" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
+                                <a href="https://www.youtube.com/@Jewelleryworldexhibition" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
                                     <FaYoutube />
                                 </a>
                                 <a href="https://www.linkedin.com/company/101981114/admin/feed/posts/?feedType=following" className="hover:text-amber-400 transition-transform hover:scale-110" target='_blank'>
