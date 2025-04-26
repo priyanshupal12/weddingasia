@@ -20,7 +20,7 @@ import g13 from '../../assets/gallery/g13.jpg';
 import g14 from '../../assets/gallery/g14.jpg';
 import g15 from '../../assets/gallery/g15.jpg';
 import g16 from '../../assets/gallery/g16.jpg';
-import g17 from '../../assets/gallery/g17.jpg';
+
 import g18 from '../../assets/gallery/g18.jpg';
 import g19 from '../../assets/gallery/g19.jpg';
 import g20 from '../../assets/gallery/g20.jpg';
@@ -35,9 +35,9 @@ import g28 from '../../assets/gallery/g28.jpg';
 import g29 from '../../assets/gallery/g29.jpg';
 import g30 from '../../assets/gallery/g30.jpg';
 import g31 from '../../assets/gallery/g31.jpg';
-import g32 from '../../assets/gallery/g32.jpg';
+
 import g33 from '../../assets/gallery/g33.jpg';
-import g34 from '../../assets/gallery/g34.jpg';
+
 import g35 from '../../assets/gallery/g35.jpg';
 import g36 from '../../assets/gallery/g36.jpg';
 import g37 from '../../assets/gallery/g37.jpg';
@@ -60,10 +60,10 @@ export default function EventShowcase() {
   // Generate images for the gallery
   const galleryImages = [
     g1, g2, g3, g4, g5, g6, g7, g8, g9, g10,
-    g11, g12, g13, g14, g15, g16, g17, g18, g19, g20,
+    g11, g12, g13, g14, g15, g16, g18, g19, g20,
     g21, g22, g23, g24, g25, g26, g27, g28, g29, g30,
-    g31, g32, g33, g34, g35, g36, g37, g38, g39, g40,
-    g41, g42, g43, g14, g15, g16, g17, g18, g19, g20,
+    g31, g33, g35, g36, g37, g38, g39, g40,
+    g41, g42, g43, g14, 
   ].map((src, index) => ({
     id: index + 1,
     src,

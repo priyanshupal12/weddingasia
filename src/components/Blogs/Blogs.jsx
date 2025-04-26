@@ -75,7 +75,7 @@ export default function BlogSectionWithBanner() {
         <motion.img
           src={Hero2}
           alt="Wedding Asia Banner"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-[60%_10%]"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 2 }}

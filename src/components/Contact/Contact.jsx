@@ -157,7 +157,7 @@ const Contact = () => {
                       {item.icon}
                     </div>
                     <h3 className="text-lg font-medium text-stone-800 mb-1">{item.title}</h3>
-                    <p className="text-stone-600 mb-2">{item.details}</p>
+                    <p className="text-stone-600 mb-2 text-sm md:text-lg">{item.details}</p>
                     <a 
                       href={item.action} 
                       className="text-sm text-amber-700 hover:text-amber-900 inline-block border-b border-amber-300 hover:border-amber-700 transition-colors"

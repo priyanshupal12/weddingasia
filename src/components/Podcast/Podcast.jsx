@@ -55,6 +55,251 @@ const podcastsData = [
   }
 ];
 
+// Animation component for jewelry SVG
+// const JewelryAnimation = () => {
+//   return (
+//     <div className="absolute inset-0 z-15 pointer-events-none overflow-hidden">
+//       <svg className="w-full h-full" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+//         {/* Large Diamond */}
+//         <g className="animate-float-slow">
+//           <path 
+//             d="M500 80 L550 140 L500 200 L450 140 Z" 
+//             fill="url(#diamondGradient)" 
+//             stroke="white" 
+//             strokeWidth="1" 
+//             opacity="0.7"
+//             className="animate-pulse-light"
+//           >
+//             <animateTransform 
+//               attributeName="transform" 
+//               type="rotate" 
+//               from="0 500 140" 
+//               to="360 500 140" 
+//               dur="30s" 
+//               repeatCount="indefinite" 
+//             />
+//           </path>
+//           <circle cx="500" cy="140" r="3" fill="white" className="animate-twinkle">
+//             <animate 
+//               attributeName="opacity" 
+//               values="0;1;0" 
+//               dur="3s" 
+//               repeatCount="indefinite" 
+//             />
+//           </circle>
+//         </g>
+
+//         {/* Small Diamonds - Top Left */}
+//         <g className="animate-float-medium">
+//           <path 
+//             d="M150 120 L170 140 L150 160 L130 140 Z" 
+//             fill="url(#gemGradient1)" 
+//             stroke="white" 
+//             strokeWidth="0.5" 
+//             opacity="0.6" 
+//           >
+//             <animateTransform 
+//               attributeName="transform" 
+//               type="rotate" 
+//               from="0 150 140" 
+//               to="360 150 140" 
+//               dur="20s" 
+//               repeatCount="indefinite" 
+//             />
+//           </path>
+//         </g>
+
+//         {/* Small Diamonds - Top Right */}
+//         <g className="animate-float-fast">
+//           <path 
+//             d="M850 150 L865 165 L850 180 L835 165 Z" 
+//             fill="url(#gemGradient2)" 
+//             stroke="white" 
+//             strokeWidth="0.5" 
+//             opacity="0.6" 
+//           >
+//             <animateTransform 
+//               attributeName="transform" 
+//               type="rotate" 
+//               from="360 850 165" 
+//               to="0 850 165" 
+//               dur="15s" 
+//               repeatCount="indefinite" 
+//             />
+//           </path>
+//         </g>
+
+//         {/* Pearl Necklace - Semi-circle of dots */}
+//         <g className="animate-float-gentle">
+//           <path 
+//             d="M300,450 Q500,300 700,450" 
+//             fill="none" 
+//             stroke="rgba(255,255,255,0.3)" 
+//             strokeWidth="1" 
+//             strokeDasharray="1,5"
+//           />
+//           <circle cx="300" cy="450" r="4" fill="white" opacity="0.8">
+//             <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
+//           </circle>
+//           <circle cx="350" cy="420" r="4" fill="white" opacity="0.8">
+//             <animate attributeName="opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite" />
+//           </circle>
+//           <circle cx="400" cy="395" r="4" fill="white" opacity="0.8">
+//             <animate attributeName="opacity" values="0.7;1;0.7" dur="2.8s" repeatCount="indefinite" />
+//           </circle>
+//           <circle cx="450" cy="380" r="4" fill="white" opacity="0.8">
+//             <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite" />
+//           </circle>
+//           <circle cx="500" cy="375" r="4" fill="white" opacity="0.8">
+//             <animate attributeName="opacity" values="0.8;1;0.8" dur="3.2s" repeatCount="indefinite" />
+//           </circle>
+//           <circle cx="550" cy="380" r="4" fill="white" opacity="0.8">
+//             <animate attributeName="opacity" values="0.6;1;0.6" dur="3.7s" repeatCount="indefinite" />
+//           </circle>
+//           <circle cx="600" cy="395" r="4" fill="white" opacity="0.8">
+//             <animate attributeName="opacity" values="0.7;1;0.7" dur="2.9s" repeatCount="indefinite" />
+//           </circle>
+//           <circle cx="650" cy="420" r="4" fill="white" opacity="0.8">
+//             <animate attributeName="opacity" values="0.5;1;0.5" dur="3.3s" repeatCount="indefinite" />
+//           </circle>
+//           <circle cx="700" cy="450" r="4" fill="white" opacity="0.8">
+//             <animate attributeName="opacity" values="0.6;1;0.6" dur="3.1s" repeatCount="indefinite" />
+//           </circle>
+//         </g>
+
+//         {/* Ring */}
+//         <g className="animate-float-slow" transform="translate(800, 350)">
+//           <ellipse cx="0" cy="0" rx="30" ry="10" fill="none" stroke="rgba(255, 215, 0, 0.6)" strokeWidth="2">
+//             <animateTransform 
+//               attributeName="transform" 
+//               type="rotate" 
+//               from="0 0 0" 
+//               to="360 0 0" 
+//               dur="25s" 
+//               repeatCount="indefinite" 
+//             />
+//           </ellipse>
+//           <circle cx="0" cy="-20" r="10" fill="url(#gemGradient3)" stroke="rgba(255, 215, 0, 0.8)" strokeWidth="2">
+//             <animateTransform 
+//               attributeName="transform" 
+//               type="rotate" 
+//               from="0 0 0" 
+//               to="360 0 0" 
+//               dur="25s" 
+//               repeatCount="indefinite" 
+//             />
+//             <animate 
+//               attributeName="opacity" 
+//               values="0.7;1;0.7" 
+//               dur="4s" 
+//               repeatCount="indefinite" 
+//             />
+//           </circle>
+//         </g>
+
+//         {/* Small sparkles scattered around */}
+//         <g>
+//           {[...Array(20)].map((_, i) => {
+//             const x = Math.random() * 1000;
+//             const y = Math.random() * 600;
+//             const size = Math.random() * 2 + 1;
+//             const duration = Math.random() * 3 + 2;
+//             return (
+//               <circle 
+//                 key={i} 
+//                 cx={x} 
+//                 cy={y} 
+//                 r={size} 
+//                 fill="white"
+//               >
+//                 <animate 
+//                   attributeName="opacity" 
+//                   values="0;0.8;0" 
+//                   dur={`${duration}s`} 
+//                   repeatCount="indefinite" 
+//                   begin={`${Math.random() * 5}s`}
+//                 />
+//               </circle>
+//             );
+//           })}
+//         </g>
+
+//         {/* Gradients */}
+//         <defs>
+//           <radialGradient id="diamondGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+//             <stop offset="0%" stopColor="white" stopOpacity="1" />
+//             <stop offset="30%" stopColor="rgba(255, 255, 255, 0.9)" />
+//             <stop offset="100%" stopColor="rgba(200, 200, 255, 0.4)" />
+//           </radialGradient>
+          
+//           <radialGradient id="gemGradient1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+//             <stop offset="0%" stopColor="rgba(255, 200, 200, 1)" />
+//             <stop offset="100%" stopColor="rgba(255, 150, 150, 0.6)" />
+//           </radialGradient>
+          
+//           <radialGradient id="gemGradient2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+//             <stop offset="0%" stopColor="rgba(200, 255, 200, 1)" />
+//             <stop offset="100%" stopColor="rgba(150, 255, 150, 0.6)" />
+//           </radialGradient>
+          
+//           <radialGradient id="gemGradient3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+//             <stop offset="0%" stopColor="rgba(200, 200, 255, 1)" />
+//             <stop offset="100%" stopColor="rgba(150, 150, 255, 0.6)" />
+//           </radialGradient>
+//         </defs>
+
+//         {/* Add CSS animations with style tag */}
+//         <style>
+//           {`
+//             @keyframes float-slow {
+//               0%, 100% { transform: translateY(0px); }
+//               50% { transform: translateY(-15px); }
+//             }
+//             @keyframes float-medium {
+//               0%, 100% { transform: translateY(0px); }
+//               50% { transform: translateY(-10px); }
+//             }
+//             @keyframes float-fast {
+//               0%, 100% { transform: translateY(0px); }
+//               50% { transform: translateY(-5px); }
+//             }
+//             @keyframes float-gentle {
+//               0%, 100% { transform: translateY(0px); }
+//               50% { transform: translateY(-8px); }
+//             }
+//             @keyframes pulse-light {
+//               0%, 100% { opacity: 0.6; }
+//               50% { opacity: 0.9; }
+//             }
+//             @keyframes twinkle {
+//               0%, 100% { opacity: 0; }
+//               50% { opacity: 1; }
+//             }
+//             .animate-float-slow {
+//               animation: float-slow 8s ease-in-out infinite;
+//             }
+//             .animate-float-medium {
+//               animation: float-medium 6s ease-in-out infinite;
+//             }
+//             .animate-float-fast {
+//               animation: float-fast 4s ease-in-out infinite;
+//             }
+//             .animate-float-gentle {
+//               animation: float-gentle 7s ease-in-out infinite;
+//             }
+//             .animate-pulse-light {
+//               animation: pulse-light 4s ease-in-out infinite;
+//             }
+//             .animate-twinkle {
+//               animation: twinkle 3s ease-in-out infinite;
+//             }
+//           `}
+//         </style>
+//       </svg>
+//     </div>
+//   );
+// };
+
 export default function Podcast() {
   const [loading, setLoading] = useState(true);
   const [activePodcast, setActivePodcast] = useState(null);
@@ -130,6 +375,9 @@ export default function Podcast() {
             <div className="absolute inset-0 z-10" style={{ 
               backgroundImage: `url('data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.1" fill-rule="evenodd"%3E%3Ccircle cx="3" cy="3" r="3"/%3E%3Ccircle cx="13" cy="13" r="3"/%3E%3C/g%3E%3C/svg%3E')` 
             }}></div>
+            
+            {/* Add our jewelry animation SVG */}
+            {/* <JewelryAnimation /> */}
           </div>
           
           {/* Content overlay */}
