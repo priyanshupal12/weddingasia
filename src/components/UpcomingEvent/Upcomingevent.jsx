@@ -81,7 +81,7 @@ export default function EventsCarousel() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/register');
+    navigate('/contact');
   };
 
   // Calculate visible cards (display 3 cards on desktop, 1 on mobile)

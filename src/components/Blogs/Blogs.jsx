@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Hero3 from "../../assets/hero3.jpg";
+import Hero2 from "../../assets/hero2.jpg";
 // Sample blog data
 const blogs = [
   {
@@ -70,10 +70,10 @@ export default function BlogSectionWithBanner() {
   return (
     <div className="font-serif">
       {/* Hero Banner for transparent navbar */}
-      <div className="relative w-full h-64 md:h-180 overflow-hidden">
+      <div className="relative w-full h-100 md:h-150 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30 z-10"></div>
         <motion.img
-          src={Hero3}
+          src={Hero2}
           alt="Wedding Asia Banner"
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ scale: 1.1 }}
