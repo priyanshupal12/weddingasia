@@ -30,7 +30,8 @@ const Navbar = () => {
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/aboutus">About Us</Link></li>
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/gallery">Gallery</Link></li>
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/podcast">Podcast</Link></li>
-          <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/register">Contact us</Link></li>
+          <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/blogs">Blogs</Link></li>
+          <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/contact">Contact us</Link></li>
         </ul>
 
         {/* Mobile Hamburger */}
@@ -55,8 +56,9 @@ const Navbar = () => {
       <li><Link to="/aboutus" onClick={() => setMenuOpen(false)}>About Us</Link></li>
       <li><Link to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link></li>
       {/* <li><Link to="/onlinestore" onClick={() => setMenuOpen(false)}>Online Store</Link></li> */}
-      <li><Link to="/journal" onClick={() => setMenuOpen(false)}>Journal</Link></li>
-      <li><Link to="/register" onClick={() => setMenuOpen(false)}>Contact us</Link></li>
+      <li><Link to="/podcast" onClick={() => setMenuOpen(false)}>Podcast</Link></li>
+      <li><Link to="/blogs" onClick={() => setMenuOpen(false)}>Blogs</Link></li>
+      <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact us</Link></li>
     </ul>
   </div>
 )}

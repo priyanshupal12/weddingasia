@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Send, MapPin, Phone, Mail, Globe, CheckCircle } from "lucide-react";
+import show6 from "../../assets/about-hero.jpg"; // Placeholder image
 
-const Register = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -132,7 +133,7 @@ const Register = () => {
         {/* Background Image with Parallax Effect */}
         <div className="absolute inset-0 z-0 bg-fixed">
           <img 
-            src="https://www.bridalasia.com/mailer/BA-1738066566.webp" 
+            src={show6}
             alt="Luxury Jewelry Background" 
             className="w-full h-full object-cover object-top"
           />
@@ -345,4 +346,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Contact;

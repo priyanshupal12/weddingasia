@@ -8,9 +8,12 @@ import Scrolltop from './components/Scrolltop.jsx'
 import { Routes, Route } from 'react-router-dom';
 import Gallery from './components/Gallery/Gallery.jsx'
 import GalleryDetails from './components/Gallery/GalleryDetails.jsx'
-import Register from './components/Register/Register.jsx'
+import Register from './components/Contact/Contact.jsx'
 import JournalPage from './components/Journal/JournalPage.jsx'
 import JournalDetails from './components/Journal/JournalDetails.jsx'
+import Podcast from './components/Podcast/Podcast.jsx'
+import Blogs from './components/Blogs/Blogs.jsx'
+import Contact from './components/Contact/Contact.jsx'
 
 function App() {
   return (
@@ -25,7 +28,10 @@ function App() {
           <Route path="/gallery/:id" element={<GalleryDetails />} />
         </Route>
         {/* <Route path="/podcast" element={<JournalPage />} /> */}
-        <Route path="/register" element={<Register />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/podcast" element={<Podcast />} />
+        <Route path="/blogs" element={<Blogs />} />
+
       </Routes>
       <Footer />
     </React.Fragment>
