@@ -20,7 +20,7 @@ const Eventshowcase = () => {
 
   // Jewelry showcase event data
   const eventDetails = {
-    title: "Elegance Unveiled",
+    title: "Upcoming Events",
     subtitle: "Annual Jewelry Exhibition",
     description:
       "An exclusive showcase of our finest jewelry collections, featuring masterful craftsmanship and rare gemstones from around the world.",
@@ -32,54 +32,46 @@ const Eventshowcase = () => {
     {
       image: show1,
       name: "11th, 12th & 13th July",
-      description:
-        "YMCA AHMEDABAD",
+      description: "YMCA AHMEDABAD",
       highlight: "JEWELLERY WORLD",
     },
     {
-      image: show5, 
+      image: show5,
       name: "25th, 26th & 27th July",
-      description:
-        "ST.REGIS MUMBAI",
+      description: "ST.REGIS MUMBAI",
       highlight: "JEWELLERY WORLD",
     },
     {
       image: show2,
       name: "25th, 26th & 27th Augest",
-      description:
-        "THE ASHOK DELHI",
+      description: "THE ASHOK DELHI",
       highlight: "JEWELLERY WORLD",
     },
     {
       image: show3,
       name: "26th, 27th September",
-      description:
-        "HOTEL MARRIOTT INDORE.",
+      description: "HOTEL MARRIOTT INDORE.",
       highlight: "JEWELLERY WORLD",
     },
     {
       image: show6,
       name: "3rd, 4th & 5th October",
-      description:
-        "TAJ KRISHNA HYDERABAD",
+      description: "TAJ KRISHNA HYDERABAD",
       highlight: "JEWELLERY WORLD",
     },
     {
       image: hero1,
       name: "21th, 22th & 23rd November",
-      description:
-        "YMCA AHMEDABAD",
+      description: "YMCA AHMEDABAD",
       highlight: "JEWELLERY WORLD",
     },
     // New items
     {
       image: show4, // Replace with a new image
       name: "14th, 15th and 16th November",
-      description:
-        "ST.REGIS MUMBAI",
+      description: "ST.REGIS MUMBAI",
       highlight: "JEWELLERY WORLD",
     },
-   
   ];
 
   return (
@@ -197,6 +189,20 @@ const Eventshowcase = () => {
                 <p className="text-stone-300 max-w-lg">
                   {showcaseItems[0].description}
                 </p>
+                <motion.div
+                  className="mt-16 md:mt-24 text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7 }}
+                  viewport={{ once: true }}
+                >
+                  <Link
+                    href="/register"
+                    className="inline-block px-8 py-2 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full text-stone-800 font-medium text-lg hover:bg-gradient-to-l hover:from-amber-400 hover:to-amber-500 transition-all duration-300"
+                  >
+                    Register Now
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
 
@@ -226,9 +232,22 @@ const Eventshowcase = () => {
                     </div>
                     <h3 className="text-3xl font-medium">{item.name}</h3>
                     <p className="text-stone-300 max-w-lg">
-                  {item.description}
-                </p>
-
+                      {item.description}
+                    </p>
+                    <motion.div
+                      className="mt-16 md:mt-24 text-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.7 }}
+                      viewport={{ once: true }}
+                    >
+                      <Link
+                        href="/register"
+                        className="inline-block px-8 py-2 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full text-stone-800 font-medium text-lg hover:bg-gradient-to-l hover:from-amber-400 hover:to-amber-500 transition-all duration-300"
+                      >
+                        Register Now
+                      </Link>
+                    </motion.div>
                   </div>
                 </motion.div>
               ))}
@@ -244,36 +263,45 @@ const Eventshowcase = () => {
           transition={{ duration: 0.7 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          {showcaseItems.slice(3, 7).map(
-            (
-              item,
-              index 
-            ) => (
-              <motion.div
-                key={index}
-                className="relative overflow-hidden rounded-lg aspect-[16/9] group cursor-pointer"
-                whileHover={{ scale: 0.98 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 z-10"></div>
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 z-20 flex flex-col justify-end p-6">
-                  <div className="flex items-center mb-2">
-                    <div className="h-px w-6 bg-amber-400 mr-2"></div>
-                    <span className="text-amber-400 uppercase tracking-wider text-xs font-medium">
-                      {item.highlight}
-                    </span>
-                  </div>
-                  <h3 className="text-4xl font-medium mb-2">{item.name}</h3>
-                  <p className="text-stone-300 max-w-lg">{item.description}</p>
+          {showcaseItems.slice(3, 7).map((item, index) => (
+            <motion.div
+              key={index}
+              className="relative overflow-hidden rounded-lg aspect-[16/9] group cursor-pointer"
+              whileHover={{ scale: 0.98 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 z-10"></div>
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 z-20 flex flex-col justify-end p-6">
+                <div className="flex items-center mb-2">
+                  <div className="h-px w-6 bg-amber-400 mr-2"></div>
+                  <span className="text-amber-400 uppercase tracking-wider text-xs font-medium">
+                    {item.highlight}
+                  </span>
                 </div>
-              </motion.div>
-            )
-          )}
+                <h3 className="text-4xl font-medium mb-2">{item.name}</h3>
+                <p className="text-stone-300 max-w-lg">{item.description}</p>
+                <motion.div
+                  className="mt-16 md:mt-24 text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7 }}
+                  viewport={{ once: true }}
+                >
+                  <Link
+                    href="/register"
+                    className="inline-block px-8 py-2 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full text-stone-800 font-medium text-lg hover:bg-gradient-to-l hover:from-amber-400 hover:to-amber-500 transition-all duration-300"
+                  >
+                    Register Now
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Call to action
