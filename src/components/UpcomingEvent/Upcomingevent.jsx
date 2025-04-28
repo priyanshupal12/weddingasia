@@ -58,19 +58,20 @@ const placeData = [
     call: "+91-9323727518",
   },
   {
-    img: images[5],
-    title: "JEWELLERY WORLD",
-    date: "21. 22. 23 NOVEMBER",
-    location: "YMCA AHMEDABAD",
-    call: "+91-9323727518",
-  },
-  {
     img: images[6],
     title: "JEWELLERY WORLD",
     date: "14. 15. 16 NOVEMBER",
     location: "ST.REGIS MUMBAI",
     call: "+91-9323727518",
   },
+  {
+    img: images[5],
+    title: "JEWELLERY WORLD",
+    date: "21. 22. 23 NOVEMBER",
+    location: "YMCA AHMEDABAD",
+    call: "+91-9323727518",
+  },
+  
 ];
 
 export default function EventsCarousel() {
