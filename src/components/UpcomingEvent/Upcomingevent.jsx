@@ -39,7 +39,7 @@ const placeData = [
   {
     img: images[2],
     title: "JEWELLERY WORLD",
-    date: "29. 30 AUGEST",
+    date: "29. 30 AUGUST",
     location: "THE ASHOK DELHI",
     call: "+91-9323727518",
   },
