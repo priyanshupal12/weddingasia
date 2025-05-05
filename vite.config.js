@@ -15,7 +15,7 @@ export default defineConfig({
   theme: {
     extend: {
       fontFamily: {
-        baskervville: ['Baskervville', 'serif'],
+        Inter: ['Inter', 'serif'],
       },
     },
   },
