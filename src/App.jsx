@@ -30,7 +30,7 @@ function App() {
         {/* <Route path="/podcast" element={<JournalPage />} /> */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/podcast" element={<Podcast />} />
-        <Route path="/blogs" element={<Blogs />} />
+        {/* <Route path="/blogs" element={<Blogs />} /> */}
 
       </Routes>
       <Footer />

@@ -51,8 +51,8 @@ const Footer = () => {
                     <div className="grid md:grid-cols-3 gap-12 text-stone-100">
                         {/* Contact Info */}
                         <div>
-                            <h4 className="text-xl font-light mb-4 text-white tracking-wide">Contact Us</h4>
-                            <address className="not-italic leading-relaxed text-stone-300 space-y-2 text-sm md:text-base">
+                            <h4 className="text-xl font-light font-serif mb-4 text-white tracking-wide">Contact Us</h4>
+                            <address className="not-italic leading-relaxed text-stone-300 font-serif space-y-2 text-sm md:text-base">
                                 <p>B-217-218, Ashoka Super Market</p>
                                 <p>Swami Vivekananda Rd, next to Patkar College</p>
                                 <p>Piramal Nagar, Goregaon West</p>
@@ -62,14 +62,14 @@ const Footer = () => {
                                     <FaEnvelope className="text-amber-400 w-4 h-4" />
                                     <a
                                         href="jewelleryworldexhibitions@gmail.com"
-                                        className="hover:underline text-amber-400"
+                                        className="hover:underline font-serif text-amber-400"
                                     >
                                         jewelleryworldexhibitions@gmail.com
                                     </a>
                                 </div>
 
                                 <div className="flex items-center gap-2">
-                                    <FaPhone className="text-amber-400 w-4 h-4" />
+                                    <FaPhone className="text-amber-400 w-4 h-4 font-serif" />
                                     <span>+91 9323275057</span>
                                 </div>
                             </address>
@@ -77,10 +77,10 @@ const Footer = () => {
 
                         {/* Hours */}
                         <div>
-                            <h4 className="text-xl font-light mb-4 text-white tracking-wide">Hours</h4>
-                            <ul className="text-stone-300 space-y-2 text-md">
+                            <h4 className="text-xl font-light mb-4 font-serif text-white tracking-wide">Hours</h4>
+                            <ul className="text-stone-300 space-y-2 font-serif text-md">
                                 <li>Monday - Saturday: 10am - 6pm</li>
-                                <li>Sunday: <span className="italic text-stone-400">By Appointment Only</span></li>
+                                <li>Sunday: <span className="italic text-stone-400 font-serif">By Appointment Only</span></li>
                             </ul>
                         </div>
 

@@ -16,6 +16,8 @@ export default defineConfig({
     extend: {
       fontFamily: {
         baskervville: ['Baskervville', 'serif'],
+        // cinzel:['Cinzel'],
+
       },
     },
   },

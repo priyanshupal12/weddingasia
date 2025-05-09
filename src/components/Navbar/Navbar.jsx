@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react'; // icons
 import { Link } from 'react-router-dom'; // optional, if using routing
-import logo from '../../assets/logo1.png'; // logo image
+import logo from '../../assets/logo2.png'; // logo image
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +21,7 @@ const Navbar = () => {
       <nav className="  px-4 sm:px-6 lg:px-8 flex items-center justify-between h-18">
         {/* Left - Logo */}
         <Link to="/">
-          <img src={logo} alt="Jewellery World Logo" className="h-12 w-auto object-contain" />
+          <img src={logo} alt="Jewellery World Logo" className="h-10 w-auto object-contain" />
         </Link>
 
         {/* Right - Desktop Menu */}
@@ -30,7 +30,7 @@ const Navbar = () => {
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/aboutus">About Us</Link></li>
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/gallery">Gallery</Link></li>
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/podcast">Podcast</Link></li>
-          <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/blogs">Blogs</Link></li>
+         
           <li className="border-l border-white pl-4 hover:bg-white/10 hover:backdrop-blur-sm transition-all duration-200 px-2 py-1"><Link to="/contact">Contact us</Link></li>
         </ul>
 
@@ -57,7 +57,7 @@ const Navbar = () => {
       <li><Link to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link></li>
       {/* <li><Link to="/onlinestore" onClick={() => setMenuOpen(false)}>Online Store</Link></li> */}
       <li><Link to="/podcast" onClick={() => setMenuOpen(false)}>Podcast</Link></li>
-      <li><Link to="/blogs" onClick={() => setMenuOpen(false)}>Blogs</Link></li>
+   
       <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact us</Link></li>
     </ul>
   </div>

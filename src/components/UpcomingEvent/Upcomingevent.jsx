@@ -197,7 +197,7 @@ export default function EventsCarousel() {
                         <svg className="w-5 h-5 text-amber-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                         </svg>
-                        <p className="text-gray-800 font-medium">{event.date}</p>
+                        <p className="text-gray-800">{event.date}</p>
                       </div>
 
                       <div className="flex items-center">
