@@ -13,8 +13,9 @@ function Home() {
     <React.Fragment>
 
      <Hero/>
-      <ClientsSlider/>
+      
       <Upcomingevent />
+      <ClientsSlider />
       {/* <Eventshowcase /> */}
       {/* <WeddingStory/> */}
       {/* <Journal/> */}
