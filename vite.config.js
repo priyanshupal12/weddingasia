@@ -15,9 +15,13 @@ export default defineConfig({
   theme: {
     extend: {
       fontFamily: {
+<<<<<<< HEAD
         baskervville: ['Baskervville', 'serif'],
         // cinzel:['Cinzel'],
 
+=======
+        Inter: ['Inter', 'serif'],
+>>>>>>> 78ea88d30b5dde8d261fa910a79179fa631beb61
       },
     },
   },

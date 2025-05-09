@@ -25,7 +25,7 @@ const placeData = [
   {
     img: images[0],
     title: "JEWELLERY WORLD",
-    date: "11. 12. 13 JULY",
+    date: "11-12-13 JULY",
     location: "YMCA AHMEDABAD",
     call: "+91-9323727518",
   },
@@ -179,7 +179,7 @@ export default function EventsCarousel() {
                       src={event.img} 
                       alt={event.title} 
                       loading="lazy"  
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-[50%_45%] transform group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-70"></div>
                   </div>
@@ -205,14 +205,14 @@ export default function EventsCarousel() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
-                        <p className="text-gray-800">{event.location}</p>
+                        <p className="text-gray-800 font-bold">{event.location}</p>
                       </div>
 
                       <div className="flex items-center">
                         <svg className="w-5 h-5 text-amber-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                         </svg>
-                        <p className="text-gray-800">{event.call}</p>
+                        <p className="text-gray-800 font-bold">{event.call}</p>
                       </div>
                     </div>
 
