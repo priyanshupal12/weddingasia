@@ -270,7 +270,7 @@ const ClientsSlider = () => {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="object-contain h-16 filter grayscale hover:grayscale-0 transition duration-300"
+                  className="object-contain h-16 filter  transition duration-300"
                 />
               </div>
             ))}
