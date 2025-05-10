@@ -16,6 +16,7 @@ import hero4 from '../../assets/hero4.jpg';
 import hero5 from '../../assets/hero5.jpg';
 
 
+
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -180,7 +181,7 @@ export default function Hero() {
                     {/* Title with typewriter effect - only show for active slide */}
                     {activeIndex === index && (
                       <>
-                        <h1 className="text-4xl md:text-7xl font-light text-white mb-4 tracking-wide leading-tight">
+                        <h1 className="text-4xl font-cinzel md:text-7xl font-light text-white mb-4 tracking-wide leading-tight">
                           {typedTitle}
                           {!titleComplete && (
                             <span className="inline-block w-1 h-12 bg-amber-400 animate-pulse ml-1"></span>
@@ -243,6 +244,7 @@ export default function Hero() {
           <span className="text-white/70">{slides.length}</span>
         </div>
       </div>
+      
     </React.Fragment>
   );
 }

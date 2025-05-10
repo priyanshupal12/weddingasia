@@ -292,25 +292,17 @@ export default function EventsCarousel() {
                               </p>
                             </div>
 
-                            <div className="flex items-center justify-start">
-                              <svg
-                                className="w-5 h-5 text-amber-400 mr-2"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                                ></path>
-                              </svg>
-                              <p className="text-white font-bold text-lg">
-                                {event.date}
-                              </p>
-                            </div>
+                  <div className="p-6 relative z-10 transform translate-y-0 group-hover:translate-y-1 transition-transform duration-300">
+                    <h3 className="text-xl font-bold font-serif mb-1 text-gray-900">{event.title}</h3>
+                    <div className="w-12 h-0.5 bg-amber-500 mb-3"></div>
+
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center">
+                        <svg className="w-5 h-5 text-amber-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <p className="text-gray-800 font-bold">{event.date}</p>
+                      </div>
 
                             <div className="flex items-center justify-start">
                               <svg

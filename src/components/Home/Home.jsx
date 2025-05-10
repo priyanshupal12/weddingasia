@@ -1,17 +1,21 @@
 import React from 'react'
-import Hero from '../Hero/Hero'
+
 import Eventshowcase from '../EventShowcase/Eventshowcase';
 import Upcomingevent from '../UpcomingEvent/Upcomingevent';
 // import WeddingStory from '../WeddingStory/WeddingStory';
 import Journal from '../Journal/Journal';
+import ClientsSlider from '../Hero/Clientslider';
+import Hero from '../Hero/hero';
 
 
 function Home() {
   return (
     <React.Fragment>
 
-      <Hero />
+     <Hero/>
+      
       <Upcomingevent />
+      <ClientsSlider />
       {/* <Eventshowcase /> */}
       {/* <WeddingStory/> */}
       {/* <Journal/> */}
