@@ -287,7 +287,7 @@ export default function EventsCarousel() {
                                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                 ></path>
                               </svg>
-                              <p className="text-white font-bold text-[24px]">
+                              <p className="text-white font-bold text-[22px]">
                                 {event.location}
                               </p>
                             </div>
@@ -389,7 +389,7 @@ export default function EventsCarousel() {
 
       {/* Registration Modal */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
           <div
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
             onClick={handleCloseModal}
@@ -400,29 +400,23 @@ export default function EventsCarousel() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.3 }}
-            className="bg-white w-full max-w-lg mx-4 overflow-hidden shadow-2xl relative z-10"
+            className="bg-white w-full max-w-lg mx-auto overflow-hidden shadow-xl relative z-10 rounded-md"
           >
-            {/* Modal header with elegant design */}
-            <div className="relative">
-              <div className=" bg-gradient-to-r from-amber-500 to-amber-600 bg-center h-32 flex items-center justify-center relative z-10">
-                <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70"></div>
-                <div className="text-center relative z-10">
-                  <span className="text-amber-300 text-sm font-medium tracking-widest">
-                    EXCLUSIVE INVITATION
-                  </span>
-                  <h3 className="text-2xl font-serif font-bold text-white mt-1">
-                    Register for Exhibition
-                  </h3>
-                </div>
+            {/* Modal header with professional design */}
+            <div className="bg-gradient-to-r from-amber-600 to-amber-700 px-6 py-4 flex justify-between items-center">
+              <div className="text-white">
+                <h3 className="text-lg sm:text-xl font-semibold">
+                  Register for Exhibition
+                </h3>
               </div>
-
               <button
                 onClick={handleCloseModal}
-                className="absolute top-3 right-3 z-20 text-white/80 hover:text-white transition-colors"
+                className="text-white/80 hover:text-white transition-colors"
+                aria-label="Close modal"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
+                  className="h-5 w-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -437,34 +431,19 @@ export default function EventsCarousel() {
               </button>
             </div>
 
-            {/* Modal body with luxury styling */}
-            <div className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <div className="col-span-1">
+            {/* Modal body with professional styling */}
+            <div className="px-6 py-5">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
                     <label
-                      className=" text-gray-700 text-sm font-medium mb-2 flex items-center"
+                      className="block text-gray-700 text-sm font-medium mb-1"
                       htmlFor="name"
                     >
-                      <svg
-                        className="w-4 h-4 text-amber-500 mr-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                        ></path>
-                      </svg>
-                      <span>Full Name</span>
-                      <span className="text-amber-500 ml-1">*</span>
+                      Full Name <span className="text-amber-600">*</span>
                     </label>
                     <input
-                      className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all text-gray-700"
+                      className="w-full px-3 py-2 border border-gray-300 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 text-sm"
                       id="name"
                       name="name"
                       type="text"
@@ -475,30 +454,15 @@ export default function EventsCarousel() {
                     />
                   </div>
 
-                  <div className="col-span-1">
+                  <div>
                     <label
-                      className=" text-gray-700 text-sm font-medium mb-2 flex items-center"
+                      className="block text-gray-700 text-sm font-medium mb-1"
                       htmlFor="email"
                     >
-                      <svg
-                        className="w-4 h-4 text-amber-500 mr-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        ></path>
-                      </svg>
-                      <span>Email Address</span>
-                      <span className="text-amber-500 ml-1">*</span>
+                      Email Address <span className="text-amber-600">*</span>
                     </label>
                     <input
-                      className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200  focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all text-gray-700"
+                      className="w-full px-3 py-2 border border-gray-300 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 text-sm"
                       id="email"
                       name="email"
                       type="email"
@@ -509,30 +473,15 @@ export default function EventsCarousel() {
                     />
                   </div>
 
-                  <div className="col-span-1">
+                  <div>
                     <label
-                      className=" text-gray-700 text-sm font-medium mb-2 flex items-center"
+                      className="block text-gray-700 text-sm font-medium mb-1"
                       htmlFor="mobile"
                     >
-                      <svg
-                        className="w-4 h-4 text-amber-500 mr-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                        ></path>
-                      </svg>
-                      <span>Mobile Number</span>
-                      <span className="text-amber-500 ml-1">*</span>
+                      Mobile Number <span className="text-amber-600">*</span>
                     </label>
                     <input
-                      className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all text-gray-700"
+                      className="w-full px-3 py-2 border border-gray-300 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 text-sm"
                       id="mobile"
                       name="mobile"
                       type="tel"
@@ -543,31 +492,16 @@ export default function EventsCarousel() {
                     />
                   </div>
 
-                  <div className="col-span-1">
+                  <div>
                     <label
-                      className=" text-gray-700 text-sm font-medium mb-2 flex items-center"
+                      className="block text-gray-700 text-sm font-medium mb-1"
                       htmlFor="type"
                     >
-                      <svg
-                        className="w-4 h-4 text-amber-500 mr-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                        ></path>
-                      </svg>
-                      <span>Register as</span>
-                      <span className="text-amber-500 ml-1">*</span>
+                      Register as <span className="text-amber-600">*</span>
                     </label>
                     <div className="relative">
                       <select
-                        className="appearance-none w-full px-4 py-2.5 bg-gray-50 border border-gray-200  focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all text-gray-700"
+                        className="appearance-none w-full px-3 py-2 border border-gray-300 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 text-sm"
                         id="type"
                         name="type"
                         value={formData.type}
@@ -589,36 +523,15 @@ export default function EventsCarousel() {
                     </div>
                   </div>
 
-                  <div className="col-span-2">
+                  <div className="sm:col-span-2">
                     <label
-                      className=" text-gray-700 text-sm font-medium mb-2 flex items-center"
+                      className="block text-gray-700 text-sm font-medium mb-1"
                       htmlFor="address"
                     >
-                      <svg
-                        className="w-4 h-4 text-amber-500 mr-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        ></path>
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        ></path>
-                      </svg>
-                      <span>Address</span>
-                      <span className="text-amber-500 ml-1">*</span>
+                      Address <span className="text-amber-600">*</span>
                     </label>
                     <textarea
-                      className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all text-gray-700"
+                      className="w-full px-3 py-2 border border-gray-300 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 text-sm"
                       id="address"
                       name="address"
                       placeholder="Your complete address"
@@ -630,30 +543,15 @@ export default function EventsCarousel() {
                   </div>
 
                   {formData.type === "Exhibitor" && (
-                    <div className="col-span-2">
+                    <div className="sm:col-span-2">
                       <label
-                        className=" text-gray-700 text-sm font-medium mb-2 flex items-center"
+                        className="block text-gray-700 text-sm font-medium mb-1"
                         htmlFor="companyName"
                       >
-                        <svg
-                          className="w-4 h-4 text-amber-500 mr-2"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                          ></path>
-                        </svg>
-                        <span>Company Name</span>
-                        <span className="text-amber-500 ml-1">*</span>
+                        Company Name <span className="text-amber-600">*</span>
                       </label>
                       <input
-                        className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200  focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all text-gray-700"
+                        className="w-full px-3 py-2 border border-gray-300 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 text-sm"
                         id="companyName"
                         name="companyName"
                         type="text"
@@ -666,38 +564,34 @@ export default function EventsCarousel() {
                   )}
                 </div>
 
-                <div className="pt-4">
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
-                    <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3">
-                      <button
-                        type="button"
-                        className="px-6 py-2.5 border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition-colors"
-                        onClick={handleCloseModal}
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        type="submit"
-                        className="px-6 py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-medium  hover:from-amber-600 hover:to-amber-700 transition-colors shadow-md hover:shadow-lg flex items-center justify-center"
-                      >
-                        <span>Confirm Registration</span>
-                        <svg
-                          className="w-4 h-4 ml-2"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          ></path>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
+                <div className="pt-3 flex flex-col-reverse sm:flex-row sm:justify-between sm:space-x-2 space-y-3 space-y-reverse sm:space-y-0">
+                  <button
+                    type="button"
+                    className="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded bg-white text-gray-700 font-medium hover:bg-gray-50 transition-colors text-sm"
+                    onClick={handleCloseModal}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="w-full sm:w-auto px-5 py-2 bg-amber-600 text-white font-medium rounded hover:bg-amber-700 transition-colors shadow-sm hover:shadow text-sm flex items-center justify-center"
+                  >
+                    <span>Complete Registration</span>
+                    <svg
+                      className="w-4 h-4 ml-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      ></path>
+                    </svg>
+                  </button>
                 </div>
               </form>
             </div>
